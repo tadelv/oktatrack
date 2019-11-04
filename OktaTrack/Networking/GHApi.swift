@@ -28,11 +28,15 @@ class GHApi: ObservableObject {
         let network_task = TaskBuilder(url: repository.contributors_url) { (data, response, error) in
             print("\(data ?? Data()),\(String(describing: response)),\(String(describing: error))")
             guard let data = data else {
-                callback([])
+                DispatchQueue.main.async {
+                    callback([])
+                }
                 return
             }
             let contribs = SearchResponseParser(jsonData: data).decodeContributors()
-            callback(contribs)
+            DispatchQueue.main.async {
+                callback(contribs)
+            }
         }
         network_task.build().resume()
 
@@ -44,11 +48,15 @@ class GHApi: ObservableObject {
         let url = UrlBuilder(path: "/search/repositories").buildUrl(query)
         let network_task = TaskBuilder(url: url) { (data, response, error) in
             guard let data = data else {
-                callback([])
+                DispatchQueue.main.async {
+                    callback([])
+                }
                 return
             }
             let repos = SearchResponseParser(jsonData: data).decodeRepositories()
-            callback(repos)
+            DispatchQueue.main.async {
+                callback(repos)
+            }
         }
         network_task.build().resume()
         return []
@@ -62,7 +70,7 @@ struct UrlBuilder {
     let path: String
     
     func buildUrl(_ urlString: String = "") -> URL {
-        let url_s = UrlBuilder.host + urlString
+        let url_s = UrlBuilder.host + path + urlString
         // TODO: wrap around a try catch?
         return URL(string: url_s)!
     }

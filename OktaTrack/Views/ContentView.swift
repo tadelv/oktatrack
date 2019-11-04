@@ -10,11 +10,9 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @ObservedObject private var coordinator = MasterCoordinator()
-
     var body: some View {
         NavigationView {
-            MasterView(repositories: coordinator.repositories)
+            MasterView()
                 .navigationBarTitle(Text("Repositories"))
 //            TODO: fix detail view appearing on iPad
 //            possibly a bug in SwiftUI on iPad vertical orientation
@@ -28,11 +26,17 @@ struct ContentView: View {
 
 struct MasterView: View {
 
-    @State var repositories: [Repository]
+    @ObservedObject private var coordinator = MasterCoordinator()
+    
+    private let offset: Int = 10
+    
+    init() {
+        coordinator.requestFresh()
+    }
 
     var body: some View {
         List {
-            ForEach(repositories, id: \.name) { repo in
+            ForEach(coordinator.repositories, id: \.name) { repo in
                 NavigationLink(
                     destination: DetailView(repo,DetailCoordinator(repo))
                 ) {
@@ -40,8 +44,10 @@ struct MasterView: View {
                         Text("\(repo.full_name)").font(.headline)
                         Text("\(repo.name)").font(.subheadline)
                     }.padding(5)
+                }.onAppear {
+                    self.listItemAppears(repo)
                 }
-            }.listStyle(GroupedListStyle())
+            }
         }
     }
 }
@@ -67,5 +73,13 @@ extension RandomAccessCollection where Self.Element: Identifiable {
         let distance = self.distance(from: itemIndex, to: endIndex)
         let offset = offset < count ? offset : count - 1
         return offset == (distance - 1)
+    }
+}
+
+extension MasterView {
+    private func listItemAppears<Item: Identifiable>(_ item: Item) {
+        if coordinator.repositories.isThresholdItem(offset: offset, item: item) {
+            coordinator.requestFresh()
+        }
     }
 }

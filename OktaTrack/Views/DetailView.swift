@@ -28,7 +28,7 @@ struct DetailView: View {
                 Section(header: Text("Contributors")) {
                     ForEach(coordinator.contributors, id: \.id) { contribution in
                         HStack(spacing: 5) {
-                            WebImageView().frame(minWidth:20, maxWidth:60, minHeight:40, maxHeight:60)
+                            WebImageView(url: contribution.avatar_url).frame(minWidth:20, maxWidth:60, minHeight:40, maxHeight:60)
                                 .clipShape(Circle())
                                 .overlay(Circle().stroke(Color.gray, lineWidth: 2))
                             Text("\(contribution.login)").font(.headline)

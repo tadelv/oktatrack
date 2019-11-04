@@ -14,8 +14,9 @@ struct GHSearchResponseRoot: Decodable {
     
 }
 
-struct Repository: Decodable, Equatable, Hashable {
+struct Repository: Decodable, Equatable, Hashable, Identifiable {
     
+    let id: UInt
     let name: String
     let full_name: String
     let owner: Author

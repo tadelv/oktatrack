@@ -18,9 +18,8 @@ class DetailCoordinator: ObservableObject {
     }
 
     func fetchContributors() {
-        GHApi.fetchContributionsAsync(repository: repository) { [weak self] contr in
-                    self!.contributors = contr
-
-                }
+        let _ = GHApi.fetchContributionsAsync(repository: repository) { [weak self] contr in
+            self!.contributors = contr
+        }
     }
 }
