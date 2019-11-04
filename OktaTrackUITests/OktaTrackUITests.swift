@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import OktaTrack
 
 class OktaTrackUITests: XCTestCase {
 
@@ -23,15 +24,6 @@ class OktaTrackUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
     func testLaunchPerformance() {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.
@@ -39,5 +31,17 @@ class OktaTrackUITests: XCTestCase {
                 XCUIApplication().launch()
             }
         }
+    }
+
+    func testContributorsVisible() {
+
+        let app = XCUIApplication()
+        app.launch()
+        wait(for: [], timeout: 3)
+        XCTAssertTrue(app.tables.buttons["vsouza/awesome-ios\nawesome-ios"].exists)
+
+        app.tables.buttons["vsouza/awesome-ios\nawesome-ios"].tap()
+
+        XCTAssertFalse(app.tables["Empty list"].exists, "Contributors list should not be empty")
     }
 }

@@ -9,50 +9,42 @@
 import SwiftUI
 
 struct ContentView: View {
+
     @State private var repositories = SearchResponseParser.mockRepositories()
 
     var body: some View {
         NavigationView {
             MasterView(repositories: $repositories)
-                .navigationBarTitle(Text("Results"))
-//            DetailView()
+                .navigationBarTitle(Text("Repositories"))
+//            TODO: fix detail view appearing on iPad
+//            possibly a bug in SwiftUI on iPad vertical orientation
+//            if repositories.count > 0 {
+//                DetailView(selectedRepository: repositories[0])
+//            }
         }.navigationViewStyle(DoubleColumnNavigationViewStyle())
+//        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
 struct MasterView: View {
+
     @Binding var repositories: [Repository]
 
     var body: some View {
         List {
             ForEach(repositories, id: \.name) { repo in
                 NavigationLink(
-                    destination: DetailView(selectedRepository: repo)
+                    destination: DetailView(repo,DetailCoordinator(repo))
                 ) {
-                    Text("\(repo.name)")
-                    Text("\(repo.owner.login)")
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text("\(repo.full_name)").font(.headline)
+                        Text("\(repo.name)").font(.subheadline)
+                    }.padding(5)
                 }
-            }
+            }.listStyle(GroupedListStyle())
         }
     }
 }
-
-struct DetailView: View {
-    var selectedRepository: Repository
-//    @State private var contributors = SearchResponseParser.mockContributors()
-
-    var body: some View {
-        VStack {
-            Text(selectedRepository.name).font(.title)
-            Text(selectedRepository.description).font(.caption)
-//            else {
-            Text("Default text")
-            Spacer()
-//            }
-        }.navigationBarTitle(Text(selectedRepository.owner.login))
-    }
-}
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

@@ -15,6 +15,22 @@
 		1838E77A2366D0FA00EE6AF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1838E7782366D0FA00EE6AF3 /* LaunchScreen.storyboard */; };
 		1838E7852366D0FA00EE6AF3 /* OktaTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E7842366D0FA00EE6AF3 /* OktaTrackTests.swift */; };
 		1838E7902366D0FA00EE6AF3 /* OktaTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E78F2366D0FA00EE6AF3 /* OktaTrackUITests.swift */; };
+		1838E79F2366D12F00EE6AF3 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E79E2366D12F00EE6AF3 /* Repository.swift */; };
+		1838E7A52366D1B800EE6AF3 /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E7A42366D1B800EE6AF3 /* Contribution.swift */; };
+		1838E7A92366D2A300EE6AF3 /* GHApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E7A82366D2A300EE6AF3 /* GHApi.swift */; };
+		1838E7AD2366D2FB00EE6AF3 /* GHApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E7AB2366D2FB00EE6AF3 /* GHApiTests.swift */; };
+		187470E0236AEA82009B9561 /* swift_repos_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470DD236AEA81009B9561 /* swift_repos_sample.json */; };
+		187470E1236AEA82009B9561 /* swift_repos_sample_page2.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470DE236AEA82009B9561 /* swift_repos_sample_page2.json */; };
+		187470E2236AEA82009B9561 /* swift_repos_sample_page1.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470DF236AEA82009B9561 /* swift_repos_sample_page1.json */; };
+		187470E4236AEB16009B9561 /* SearchResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187470E3236AEB16009B9561 /* SearchResponseParser.swift */; };
+		187470E6236AECD7009B9561 /* SearchResponseParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187470E5236AECD7009B9561 /* SearchResponseParserTests.swift */; };
+		187470E9236B09AF009B9561 /* swift_contributors_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470E8236B09AF009B9561 /* swift_contributors_sample.json */; };
+		187470EA236B1131009B9561 /* swift_repos_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470DD236AEA81009B9561 /* swift_repos_sample.json */; };
+		187470EB236B1135009B9561 /* swift_contributors_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470E8236B09AF009B9561 /* swift_contributors_sample.json */; };
+		18B2831F236C3CD000850FB3 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2831E236C3CD000850FB3 /* WebImageView.swift */; };
+		18C1575C236D17AF00E268C5 /* MasterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1575B236D17AF00E268C5 /* MasterCoordinator.swift */; };
+		18C1575E236D17B900E268C5 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1575D236D17B900E268C5 /* DetailCoordinator.swift */; };
+		18C15760236D252400E268C5 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1575F236D252400E268C5 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +65,20 @@
 		1838E78B2366D0FA00EE6AF3 /* OktaTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OktaTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1838E78F2366D0FA00EE6AF3 /* OktaTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OktaTrackUITests.swift; sourceTree = "<group>"; };
 		1838E7912366D0FA00EE6AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1838E79E2366D12F00EE6AF3 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		1838E7A42366D1B800EE6AF3 /* Contribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contribution.swift; sourceTree = "<group>"; };
+		1838E7A82366D2A300EE6AF3 /* GHApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHApi.swift; sourceTree = "<group>"; };
+		1838E7AB2366D2FB00EE6AF3 /* GHApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHApiTests.swift; sourceTree = "<group>"; };
+		187470DD236AEA81009B9561 /* swift_repos_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swift_repos_sample.json; sourceTree = "<group>"; };
+		187470DE236AEA82009B9561 /* swift_repos_sample_page2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swift_repos_sample_page2.json; sourceTree = "<group>"; };
+		187470DF236AEA82009B9561 /* swift_repos_sample_page1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swift_repos_sample_page1.json; sourceTree = "<group>"; };
+		187470E3236AEB16009B9561 /* SearchResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseParser.swift; sourceTree = "<group>"; };
+		187470E5236AECD7009B9561 /* SearchResponseParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseParserTests.swift; sourceTree = "<group>"; };
+		187470E8236B09AF009B9561 /* swift_contributors_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swift_contributors_sample.json; sourceTree = "<group>"; };
+		18B2831E236C3CD000850FB3 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
+		18C1575B236D17AF00E268C5 /* MasterCoordinator.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = MasterCoordinator.swift; sourceTree = "<group>"; tabWidth = 2; };
+		18C1575D236D17B900E268C5 /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
+		18C1575F236D252400E268C5 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +129,11 @@
 		1838E76C2366D0F500EE6AF3 /* OktaTrack */ = {
 			isa = PBXGroup;
 			children = (
+				18B2831D236C3CBA00850FB3 /* Views */,
+				1838E7A72366D28A00EE6AF3 /* Networking */,
+				1838E79D2366D11200EE6AF3 /* Data */,
 				1838E76D2366D0F500EE6AF3 /* AppDelegate.swift */,
 				1838E76F2366D0F500EE6AF3 /* SceneDelegate.swift */,
-				1838E7712366D0F500EE6AF3 /* ContentView.swift */,
 				1838E7732366D0FA00EE6AF3 /* Assets.xcassets */,
 				1838E7782366D0FA00EE6AF3 /* LaunchScreen.storyboard */,
 				1838E77B2366D0FA00EE6AF3 /* Info.plist */,
@@ -121,8 +153,14 @@
 		1838E7832366D0FA00EE6AF3 /* OktaTrackTests */ = {
 			isa = PBXGroup;
 			children = (
+				187470E8236B09AF009B9561 /* swift_contributors_sample.json */,
+				187470DF236AEA82009B9561 /* swift_repos_sample_page1.json */,
+				187470DE236AEA82009B9561 /* swift_repos_sample_page2.json */,
+				187470DD236AEA81009B9561 /* swift_repos_sample.json */,
 				1838E7842366D0FA00EE6AF3 /* OktaTrackTests.swift */,
 				1838E7862366D0FA00EE6AF3 /* Info.plist */,
+				1838E7AB2366D2FB00EE6AF3 /* GHApiTests.swift */,
+				187470E5236AECD7009B9561 /* SearchResponseParserTests.swift */,
 			);
 			path = OktaTrackTests;
 			sourceTree = "<group>";
@@ -134,6 +172,36 @@
 				1838E7912366D0FA00EE6AF3 /* Info.plist */,
 			);
 			path = OktaTrackUITests;
+			sourceTree = "<group>";
+		};
+		1838E79D2366D11200EE6AF3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				1838E79E2366D12F00EE6AF3 /* Repository.swift */,
+				1838E7A42366D1B800EE6AF3 /* Contribution.swift */,
+				187470E3236AEB16009B9561 /* SearchResponseParser.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		1838E7A72366D28A00EE6AF3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1838E7A82366D2A300EE6AF3 /* GHApi.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		18B2831D236C3CBA00850FB3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				18C1575F236D252400E268C5 /* DetailView.swift */,
+				1838E7712366D0F500EE6AF3 /* ContentView.swift */,
+				18B2831E236C3CD000850FB3 /* WebImageView.swift */,
+				18C1575B236D17AF00E268C5 /* MasterCoordinator.swift */,
+				18C1575D236D17B900E268C5 /* DetailCoordinator.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +308,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187470EB236B1135009B9561 /* swift_contributors_sample.json in Resources */,
 				1838E77A2366D0FA00EE6AF3 /* LaunchScreen.storyboard in Resources */,
+				187470EA236B1131009B9561 /* swift_repos_sample.json in Resources */,
 				1838E7772366D0FA00EE6AF3 /* Preview Assets.xcassets in Resources */,
 				1838E7742366D0FA00EE6AF3 /* Assets.xcassets in Resources */,
 			);
@@ -250,6 +320,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187470E0236AEA82009B9561 /* swift_repos_sample.json in Resources */,
+				187470E9236B09AF009B9561 /* swift_contributors_sample.json in Resources */,
+				187470E2236AEA82009B9561 /* swift_repos_sample_page1.json in Resources */,
+				187470E1236AEA82009B9561 /* swift_repos_sample_page2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,8 +342,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1838E76E2366D0F500EE6AF3 /* AppDelegate.swift in Sources */,
+				18B2831F236C3CD000850FB3 /* WebImageView.swift in Sources */,
 				1838E7702366D0F500EE6AF3 /* SceneDelegate.swift in Sources */,
+				18C1575E236D17B900E268C5 /* DetailCoordinator.swift in Sources */,
 				1838E7722366D0F500EE6AF3 /* ContentView.swift in Sources */,
+				18C15760236D252400E268C5 /* DetailView.swift in Sources */,
+				1838E79F2366D12F00EE6AF3 /* Repository.swift in Sources */,
+				1838E7A92366D2A300EE6AF3 /* GHApi.swift in Sources */,
+				1838E7A52366D1B800EE6AF3 /* Contribution.swift in Sources */,
+				18C1575C236D17AF00E268C5 /* MasterCoordinator.swift in Sources */,
+				187470E4236AEB16009B9561 /* SearchResponseParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +360,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1838E7852366D0FA00EE6AF3 /* OktaTrackTests.swift in Sources */,
+				1838E7AD2366D2FB00EE6AF3 /* GHApiTests.swift in Sources */,
+				187470E6236AECD7009B9561 /* SearchResponseParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,19 +602,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83EHXXK8W9;
+				ENABLE_BITCODE = YES;
+				GENERATE_PROFILING_CODE = YES;
 				INFOPLIST_FILE = OktaTrackUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadel.delta96.OktaTrackUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = OktaTrack;
+				WARNING_CFLAGS = "-v";
 			};
 			name = Debug;
 		};
@@ -538,19 +627,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83EHXXK8W9;
+				ENABLE_BITCODE = YES;
+				GENERATE_PROFILING_CODE = YES;
 				INFOPLIST_FILE = OktaTrackUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadel.delta96.OktaTrackUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = OktaTrack;
+				WARNING_CFLAGS = "-v";
 			};
 			name = Release;
 		};
