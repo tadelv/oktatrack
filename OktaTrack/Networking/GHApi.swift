@@ -21,14 +21,14 @@ class GHApi: ObservableObject {
     fileprivate static let resume_data = Data()
 
     typealias ContributionsCallback = ([Contribution]) -> Void
+    typealias RepositoriesCallback = ([Repository]) -> Void
 
-    class func fetchContributionsAsync(_ callback: @escaping ContributionsCallback) -> [Contribution] {
-        
-        let url = UrlBuilder(path: "/repos/CosmicMind/Material/contributors").buildUrl("?page=1")
-        let network_task = TaskBuilder(url: url) { (data, response, error) in
+    class func fetchContributionsAsync(repository: Repository, _ callback: @escaping ContributionsCallback) -> [Contribution] {
+
+        let network_task = TaskBuilder(url: repository.contributors_url) { (data, response, error) in
             print("\(data ?? Data()),\(String(describing: response)),\(String(describing: error))")
             guard let data = data else {
-                callback(SearchResponseParser.mockContributors())
+                callback([])
                 return
             }
             let contribs = SearchResponseParser(jsonData: data).decodeContributors()
@@ -36,7 +36,22 @@ class GHApi: ObservableObject {
         }
         network_task.build().resume()
 
-        return SearchResponseParser.mockContributors()
+        return []
+    }
+
+    static func fetchRepositoriesAsync(page: UInt, _ callback: @escaping RepositoriesCallback) -> [Contribution] {
+        let query = "?q=language:swift&page=\(page)&per_page=25"
+        let url = UrlBuilder(path: "/search/repositories").buildUrl(query)
+        let network_task = TaskBuilder(url: url) { (data, response, error) in
+            guard let data = data else {
+                callback([])
+                return
+            }
+            let repos = SearchResponseParser(jsonData: data).decodeRepositories()
+            callback(repos)
+        }
+        network_task.build().resume()
+        return []
     }
 }
 
@@ -46,7 +61,7 @@ struct UrlBuilder {
     
     let path: String
     
-    func buildUrl(_ urlString: String) -> URL {
+    func buildUrl(_ urlString: String = "") -> URL {
         let url_s = UrlBuilder.host + urlString
         // TODO: wrap around a try catch?
         return URL(string: url_s)!
@@ -71,7 +86,7 @@ struct TaskBuilder {
         url_req.mainDocumentURL = url
         url_req.allowsExpensiveNetworkAccess = false
         url_req.allHTTPHeaderFields.map { fields in
-            print(fields)
+//            print(fields)
         }
         return TaskBuilder.session.dataTask(with: url_req, completionHandler: completion)
     }

@@ -10,11 +10,11 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @State private var repositories = SearchResponseParser.mockRepositories()
+    @ObservedObject private var coordinator = MasterCoordinator()
 
     var body: some View {
         NavigationView {
-            MasterView(repositories: $repositories)
+            MasterView(repositories: coordinator.repositories)
                 .navigationBarTitle(Text("Repositories"))
 //            TODO: fix detail view appearing on iPad
 //            possibly a bug in SwiftUI on iPad vertical orientation
@@ -28,7 +28,7 @@ struct ContentView: View {
 
 struct MasterView: View {
 
-    @Binding var repositories: [Repository]
+    @State var repositories: [Repository]
 
     var body: some View {
         List {
@@ -49,5 +49,23 @@ struct MasterView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+// pagination
+extension RandomAccessCollection where Self.Element: Identifiable {
+    func isThresholdItem<Item: Identifiable>(offset: Int,
+                                             item: Item) -> Bool {
+        guard !isEmpty else {
+            return false
+        }
+
+        guard let itemIndex = firstIndex(where: { AnyHashable($0.id) == AnyHashable(item.id) }) else {
+            return false
+        }
+
+        let distance = self.distance(from: itemIndex, to: endIndex)
+        let offset = offset < count ? offset : count - 1
+        return offset == (distance - 1)
     }
 }

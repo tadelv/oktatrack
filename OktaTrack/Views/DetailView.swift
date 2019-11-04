@@ -37,6 +37,8 @@ struct DetailView: View {
                         }
                     }
                 }
+            }.onAppear() {
+                self.coordinator.fetchContributors()
             }
         }.navigationBarTitle(Text(repository.owner.login), displayMode: .inline)
     }

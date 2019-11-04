@@ -15,17 +15,12 @@ class DetailCoordinator: ObservableObject {
 
     init(_ repository: Repository) {
         self.repository = repository
-        GHApi.fetchContributionsAsync() { [weak self] contr in
-
-//            _ = self!.objectWillChange.sink(receiveValue: { _ in
-//                print("will update: \(contr)")
-//            })
-            self!.update(contr)
-
-        }
     }
 
-    func update(_ contr: [Contribution]) {
-        self.contributors = contr
+    func fetchContributors() {
+        GHApi.fetchContributionsAsync(repository: repository) { [weak self] contr in
+                    self!.contributors = contr
+
+                }
     }
 }

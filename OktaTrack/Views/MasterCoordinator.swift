@@ -7,17 +7,20 @@
 //
 
 import Foundation
+import Combine
 
-class MasterCoordinator {
+class MasterCoordinator: ObservableObject {
 
-  var repositories = [Repository]()
-  private var page_offset = 0
+  @Published var repositories = [Repository]()
+  private var page_offset: UInt = 0
   private (set) var page_size = 25
 
   func requestFresh() {
-    // TODO: signal view
-    repositories = SearchResponseParser.mockRepositories()
-    page_offset += 1
+    GHApi.fetchRepositoriesAsync(page: page_offset) { (repos) in
+      if repos.count == self.page_size {
+        self.repositories.append(contentsOf: repos)
+        self.page_offset += 1
+      }
+    }
   }
-
 }
