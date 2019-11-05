@@ -14,16 +14,17 @@ struct ContentView: View {
         NavigationView {
             MasterView()
                 .navigationBarTitle(Text("Repositories"))
-//            TODO: fix detail view appearing on iPad
-//            possibly a bug in SwiftUI on iPad vertical orientation
-//            if repositories.count > 0 {
-//                DetailView(selectedRepository: repositories[0])
-//            }
-        }.navigationViewStyle(DoubleColumnNavigationViewStyle())
-//        }.navigationViewStyle(StackNavigationViewStyle())
+                .navigationViewStyle(DoubleColumnNavigationViewStyle())
+        }
     }
 }
 
+//    TODO: fix detail view appearing on iPad
+//    possibly a bug in SwiftUI on iPad vertical orientation
+//    if repositories.count > 0 {
+//        DetailView(selectedRepository: repositories[0])
+//    }
+//}.navigationViewStyle(StackNavigationViewStyle())
 struct MasterView: View {
 
     @ObservedObject private var coordinator = MasterCoordinator()
