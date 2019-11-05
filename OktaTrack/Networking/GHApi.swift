@@ -26,8 +26,8 @@ class GHApi: ObservableObject {
     class func fetchContributionsAsync(repository: Repository, _ callback: @escaping ContributionsCallback) -> [Contribution] {
 
         let network_task = TaskBuilder(url: repository.contributors_url) { (data, response, error) in
-            print("\(data ?? Data()),\(String(describing: response)),\(String(describing: error))")
             guard let data = data else {
+                print(error!)
                 DispatchQueue.main.async {
                     callback([])
                 }
@@ -49,6 +49,7 @@ class GHApi: ObservableObject {
         let network_task = TaskBuilder(url: url) { (data, response, error) in
             guard let data = data else {
                 DispatchQueue.main.async {
+                    print(error!)
                     callback([])
                 }
                 return

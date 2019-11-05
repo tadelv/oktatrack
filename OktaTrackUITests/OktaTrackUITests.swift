@@ -37,10 +37,10 @@ class OktaTrackUITests: XCTestCase {
 
         let app = XCUIApplication()
         app.launch()
-        wait(for: [], timeout: 3)
-        XCTAssertTrue(app.tables.buttons["vsouza/awesome-ios\nawesome-ios"].exists)
+        wait(for: [], timeout: 10)
+        XCTAssertTrue(app.tables.buttons.firstMatch.exists)
 
-        app.tables.buttons["vsouza/awesome-ios\nawesome-ios"].tap()
+        app.tables.buttons.firstMatch.tap()
 
         XCTAssertFalse(app.tables["Empty list"].exists, "Contributors list should not be empty")
     }

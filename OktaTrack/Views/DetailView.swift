@@ -21,26 +21,65 @@ struct DetailView: View {
     var body: some View {
         VStack {
             Section {
-                Text(repository.name).font(.title)
-                Text(repository.description).font(.caption).padding(15)
+                Spacer().frame(width: 1, height: 15, alignment: .center)
+                Text("By " + repository.owner.login)
+                    .font(.headline)
+                    .foregroundColor(Color.pureColor(val: 0xbd2c00ff))
+                    .scaledToFit()
+                Text(repository.description)
+                    .font(.subheadline)
+                    .foregroundColor(Color.pureColor(val: 0x333333ff))
+                    .padding(15)
+
+                HStack {
+                    Spacer()
+                    VStack {
+                        Text("⋔:").font(.headline)
+                        Text("\(repository.forks_count)")
+                    }
+                    .padding(10)
+                    .foregroundColor(Color.pureColor(val: 0x6cc64477))
+                    Spacer()
+                    VStack {
+                        Text("✨:").font(.headline)
+                        Text("\(repository.stargazers_count)")
+                    }
+                    .padding(10)
+                    .foregroundColor(Color.pureColor(val: 0xc9510c77))
+                    Spacer()
+                    VStack {
+                        Text("🚛").font(.headline)
+                        Text("\(String(format:"%.2f",(Double(repository.size))/1024.0))kB")
+                    }
+                    .padding(10)
+                    .foregroundColor(Color.pureColor(val: 0x6e549477))
+                    Spacer()
+                }
             }
             List {
                 Section(header: Text("Contributors")) {
                     ForEach(coordinator.contributors, id: \.id) { contribution in
                         HStack(spacing: 5) {
-                            WebImageView(url: contribution.avatar_url).frame(minWidth:20, maxWidth:60, minHeight:40, maxHeight:60)
+                            WebImageView(url: contribution.avatar_url)
+                                .frame(width: 40, height: 40)
                                 .clipShape(Circle())
                                 .overlay(Circle().stroke(Color.gray, lineWidth: 2))
-                            Text("\(contribution.login)").font(.headline)
+                            Text("\(contribution.login)")
+                                .font(.headline)
                             Spacer()
-                            Text("\(contribution.contributions)")
+                            VStack(alignment: .trailing, spacing: 2) {
+                                Text("🔨")
+                                Text("\(contribution.contributions)")
+                            }
                         }
                     }
                 }
-            }.onAppear() {
+            }
+            .onAppear() {
                 self.coordinator.fetchContributors()
             }
-        }.navigationBarTitle(Text(repository.owner.login), displayMode: .inline)
+        }
+        .navigationBarTitle(Text(repository.name), displayMode: .inline)
     }
 }
 

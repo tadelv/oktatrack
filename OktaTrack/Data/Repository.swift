@@ -16,7 +16,7 @@ struct GHSearchResponseRoot: Decodable {
 
 struct Repository: Decodable, Equatable, Hashable, Identifiable {
     
-    let id: UInt
+    let id: Int
     let name: String
     let full_name: String
     let owner: Author
@@ -37,6 +37,7 @@ struct Repository: Decodable, Equatable, Hashable, Identifiable {
     }
     
     func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
         hasher.combine(name)
         hasher.combine(owner.login)
     }

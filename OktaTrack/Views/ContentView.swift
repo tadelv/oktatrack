@@ -13,8 +13,9 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             MasterView()
-                .navigationBarTitle(Text("Repositories"))
+                .navigationBarTitle(Text("Repositories"), displayMode: .automatic)
                 .navigationViewStyle(DoubleColumnNavigationViewStyle())
+//                .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }
@@ -28,7 +29,6 @@ struct ContentView: View {
 struct MasterView: View {
 
     @ObservedObject private var coordinator = MasterCoordinator()
-    
     private let offset: Int = 10
     
     init() {
@@ -37,17 +37,18 @@ struct MasterView: View {
 
     var body: some View {
         List {
-            ForEach(coordinator.repositories, id: \.name) { repo in
-                NavigationLink(
-                    destination: DetailView(repo,DetailCoordinator(repo))
-                ) {
+            ForEach(coordinator.repositories, id: \.self) { repo in
+                NavigationLink(destination: DetailView(repo,DetailCoordinator(repo))) {
                     VStack(alignment: .leading, spacing: 5) {
                         Text("\(repo.full_name)").font(.headline)
                         Text("\(repo.name)").font(.subheadline)
                     }.padding(5)
-                }.onAppear {
-                    self.listItemAppears(repo)
+                        .onAppear {
+                            self.listItemAppears(repo)
+                    }
                 }
+                .shadow(radius: 2)
+                .accentColor(Color.pureColor(val: 0x333))
             }
         }
     }

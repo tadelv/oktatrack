@@ -19,10 +19,11 @@ class GHApiTests: XCTestCase {
     
     func testFetchContributors() {
         let exp = self.expectation(description: "async wait")
+        let repo = SearchResponseParser.mockRepositories()[9]
         var contribs: [Contribution] = []
-        contribs = GHApi.fetchContributionsAsync({ (contributions) in
+        contribs = GHApi.fetchContributionsAsync(repository: repo){ (contributions) in
             print(contributions)
-        })
+        }
         wait(for: [exp], timeout: 5)
         XCTAssertNotNil(contribs)
     }

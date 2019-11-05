@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181221A6237145D7006F212F /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181221A5237145D7006F212F /* Color+Hex.swift */; };
 		182166022370223C004BFE7F /* swift_contributors_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470E8236B09AF009B9561 /* swift_contributors_sample.json */; };
 		1821660323702240004BFE7F /* swift_repos_sample_page1.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470DF236AEA82009B9561 /* swift_repos_sample_page1.json */; };
 		1821660423702240004BFE7F /* swift_repos_sample_page1.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470DF236AEA82009B9561 /* swift_repos_sample_page1.json */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181221A5237145D7006F212F /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		1838E76A2366D0F500EE6AF3 /* OktaTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OktaTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1838E76D2366D0F500EE6AF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1838E76F2366D0F500EE6AF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				1838E7782366D0FA00EE6AF3 /* LaunchScreen.storyboard */,
 				1838E77B2366D0FA00EE6AF3 /* Info.plist */,
 				1838E7752366D0FA00EE6AF3 /* Preview Content */,
+				181221A5237145D7006F212F /* Color+Hex.swift */,
 			);
 			path = OktaTrack;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				1838E7702366D0F500EE6AF3 /* SceneDelegate.swift in Sources */,
 				18C1575E236D17B900E268C5 /* DetailCoordinator.swift in Sources */,
 				1838E7722366D0F500EE6AF3 /* ContentView.swift in Sources */,
+				181221A6237145D7006F212F /* Color+Hex.swift in Sources */,
 				18C15760236D252400E268C5 /* DetailView.swift in Sources */,
 				1838E79F2366D12F00EE6AF3 /* Repository.swift in Sources */,
 				1838E7A92366D2A300EE6AF3 /* GHApi.swift in Sources */,

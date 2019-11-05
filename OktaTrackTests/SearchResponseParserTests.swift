@@ -9,7 +9,7 @@
 import XCTest
 @testable import OktaTrack
 
-
+class SearchResponseParserTests: XCTest {
 
     enum SampleType {
         case SearchItems
