@@ -23,6 +23,7 @@ class GHApiTests: XCTestCase {
         var contribs: [Contribution] = []
         contribs = GHApi.fetchContributionsAsync(repository: repo){ (contributions) in
             print(contributions)
+            exp.fulfill()
         }
         wait(for: [exp], timeout: 5)
         XCTAssertNotNil(contribs)
