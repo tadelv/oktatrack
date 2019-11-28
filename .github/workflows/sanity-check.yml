@@ -3,11 +3,11 @@ name: sanity-check-build
 on: [pull_request]
 
 jobs:
-	build:
+  build:
 		
-		runs-on: macOS-latest
+    runs-on: macOS-latest
 		
-		steps:
-		- uses: actions/checkout@v1
-		- name: Build
-			run: xcodebuild -sdk iphonesimulator
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build
+      run: xcodebuild -sdk iphonesimulator
