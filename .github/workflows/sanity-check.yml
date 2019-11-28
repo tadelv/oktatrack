@@ -1,0 +1,15 @@
+name: sanity-check-build
+
+on: 
+	pull_request:
+		types: [opened]
+		
+jobs:
+	build:
+		
+		runs-on: macOS-latest
+		
+		steps:
+			- uses: actions/checkout@v1
+			- name: Build
+				run: xcodebuild -sdk iphonesimulator
