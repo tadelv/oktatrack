@@ -8,6 +8,6 @@ jobs:
 		runs-on: macOS-latest
 		
 		steps:
-			- uses: actions/checkout@v1
-			- name: Build
-				run: xcodebuild -sdk iphonesimulator
+		- uses: actions/checkout@v1
+		- name: Build
+			run: xcodebuild -sdk iphonesimulator
