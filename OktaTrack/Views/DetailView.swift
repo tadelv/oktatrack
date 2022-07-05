@@ -26,7 +26,7 @@ struct DetailView: View {
                     .font(.headline)
                     .foregroundColor(Color.pureColor(val: 0xbd2c00ff))
                     .scaledToFit()
-                Text(repository.description)
+                Text(repository.description ?? "")
                     .font(.subheadline)
                     .foregroundColor(Color.pureColor(val: 0x333333ff))
                     .padding(15)

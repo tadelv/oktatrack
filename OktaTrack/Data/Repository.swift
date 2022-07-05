@@ -20,7 +20,7 @@ struct Repository: Decodable, Equatable, Hashable, Identifiable {
     let name: String
     let full_name: String
     let owner: Author
-    let description: String
+    let description: String?
     let size: UInt
     let stargazers_count: UInt
     let forks_count: UInt
