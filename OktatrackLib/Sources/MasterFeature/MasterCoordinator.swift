@@ -13,7 +13,7 @@ import Models
 public class MasterCoordinator: ObservableObject {
 
     @Published var repositories = [Repository]()
-    private var page_offset: UInt = 1
+    private var page_offset: UInt = 0
     private (set) var page_size = 25
 
     private let fetch: (UInt) async throws -> [Repository]
@@ -30,8 +30,10 @@ public class MasterCoordinator: ObservableObject {
                     guard let self else {
                         return
                     }
-                    self.repositories.append(contentsOf: repos)
-                    if repos.count == self.page_size {
+                    self.repositories.append(contentsOf: repos.filter {
+                        !self.repositories.contains($0)
+                    })
+                    if repos.count >= self.page_size {
                         self.page_offset += 1
                     }
                 }

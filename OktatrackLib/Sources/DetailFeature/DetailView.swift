@@ -68,9 +68,9 @@ public struct DetailView: View {
                     }
                 }
             }
-            .onAppear() {
-                self.coordinator.fetchContributors()
-            }
+        }
+        .onAppear {
+            coordinator.fetchContributors()
         }
         .navigationBarTitle(Text(repository.name), displayMode: .inline)
     }
@@ -93,7 +93,19 @@ struct DetailView_Previews: PreviewProvider {
             .init(id: 1,
                   login: "test",
                   avatarUrl: URL(string: "a")!,
-                  contributions: 1)
+                  contributions: 11),
+            .init(id: 1,
+                  login: "test",
+                  avatarUrl: URL(string: "a")!,
+                  contributions: 11),
+            .init(id: 1,
+                  login: "test",
+                  avatarUrl: URL(string: "a")!,
+                  contributions: 11),
+            .init(id: 1,
+                  login: "test",
+                  avatarUrl: URL(string: "a")!,
+                  contributions: 11),
         ] })
         return DetailView(repo,coord)
     }

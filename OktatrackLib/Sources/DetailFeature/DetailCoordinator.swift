@@ -25,7 +25,7 @@ public final class DetailCoordinator: ObservableObject {
     func fetchContributors() {
         runningTask = Task { [weak self] in
             do {
-                let contributions = try await fetch()
+                let contributions: [Contribution] = try await fetch()
                 await MainActor.run { [weak self] in
                     self?.contributors = contributions
                 }

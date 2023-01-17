@@ -69,22 +69,25 @@ extension RandomAccessCollection where Self.Element: Identifiable {
 
 struct MasterView_Previews: PreviewProvider {
     static var previews: some View {
-        MasterView { page in
-            var results: [Repository] = []
-            for i in 0...25 {
-                results.append(Repository(id: Int(page) * i,
-                                          name: "repo \(i * Int(page))",
-                                          full_name: "Test repo",
-                                          owner: .init(login: "test", avatarUrl: URL(string: "a")!),
-                                          size: 200,
-                                          stargazers_count: 200,
-                                          forks_count: 200,
-                                          contributors_url: URL(string: "a")!,
-                                          watchers: 200))
+        NavigationView {
+            MasterView { page in
+                var results: [Repository] = []
+                let pageId = page * 25
+                for i in 1...25 {
+                    results.append(Repository(id: Int(pageId) + i,
+                                              name: "repo \(i + Int(pageId))",
+                                              full_name: "Test repo",
+                                              owner: .init(login: "test", avatarUrl: URL(string: "a")!),
+                                              size: 200,
+                                              stargazers_count: 200,
+                                              forks_count: 200,
+                                              contributors_url: URL(string: "a")!,
+                                              watchers: 200))
+                }
+                return results
+            } detail: { repo in
+                Text("Detail for \(repo.name)")
             }
-            return results
-        } detail: { repo in
-            Text("Detail for \(repo.name)")
         }
     }
 }
