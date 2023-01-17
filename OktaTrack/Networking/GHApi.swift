@@ -6,8 +6,10 @@
 //  Copyright © 2019 Delta96. All rights reserved.
 //
 
-import Foundation
 import Combine
+import Foundation
+import Helpers
+import Models
 
 class GHApi: ObservableObject {
     // TODO: sub
@@ -23,6 +25,7 @@ class GHApi: ObservableObject {
     typealias ContributionsCallback = ([Contribution]) -> Void
     typealias RepositoriesCallback = ([Repository]) -> Void
 
+    @discardableResult
     class func fetchContributionsAsync(repository: Repository, _ callback: @escaping ContributionsCallback) -> [Contribution] {
 
         let network_task = TaskBuilder(url: repository.contributors_url) { (data, response, error) in
@@ -42,7 +45,8 @@ class GHApi: ObservableObject {
 
         return []
     }
-
+    
+    @discardableResult
     static func fetchRepositoriesAsync(page: UInt, _ callback: @escaping RepositoriesCallback) -> [Contribution] {
         let query = "?q=language:swift&page=\(page)&per_page=25"
         let url = UrlBuilder(path: "/search/repositories").buildUrl(query)
@@ -64,40 +68,4 @@ class GHApi: ObservableObject {
     }
 }
 
-struct UrlBuilder {
-    
-    static let host = "https://api.github.com"
-    
-    let path: String
-    
-    func buildUrl(_ urlString: String = "") -> URL {
-        let url_s = UrlBuilder.host + path + urlString
-        // TODO: wrap around a try catch?
-        return URL(string: url_s)!
-    }
-}
 
-struct TaskBuilder {
-    
-    let url: URL
-    typealias Completion = (Data?, URLResponse?, Error?) -> Void
-    let completion: Completion
-    
-    static let session = URLSession(configuration: .default)
-    
-    func build() -> URLSessionTask {
-        //        let networkTask = URLSession(configuration: .default).downloadTask(with: url_req)
-        //        let networkTask = URLSession(configuration: .default).dataTaskPublisher(for: url_req)
-        //        networkTask.receive(subscriber: self)
-        //        networkTask.resume()
-        
-        var url_req = URLRequest(url: url, cachePolicy: .reloadRevalidatingCacheData, timeoutInterval: 10.0)
-        url_req.mainDocumentURL = url
-        url_req.allowsExpensiveNetworkAccess = false
-        url_req.allHTTPHeaderFields.map { fields in
-//            print(fields)
-        }
-        return TaskBuilder.session.dataTask(with: url_req, completionHandler: completion)
-    }
-    
-}

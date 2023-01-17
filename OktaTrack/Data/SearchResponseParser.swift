@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Models
 
 // TODO: Use Generics to parse data and return appropriate types if possible
 struct SearchResponseParser {

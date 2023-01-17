@@ -9,24 +9,22 @@
 import SwiftUI
 
 // TODO: Load images from web
-struct WebImageView: View {
+public struct WebImageView: View {
     
     @ObservedObject private var downloader: ImageDownloader
     
-    init(url: URL) {
+    public init(url: URL) {
         downloader = ImageDownloader(url: url)
     }
 
-    var body: some View {
-//        Color(.blue)
+    public var body: some View {
         Image(uiImage: downloader.image)
             .resizable()
             .aspectRatio(contentMode: .fit)
     }
-    
 }
 
-class ImageDownloader: ObservableObject {
+final class ImageDownloader: ObservableObject {
     
     enum State {
         case Waiting

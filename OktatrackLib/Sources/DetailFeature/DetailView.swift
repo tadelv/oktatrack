@@ -6,56 +6,49 @@
 //  Copyright © 2019 Delta96. All rights reserved.
 //
 
+import Models
+import Helpers
 import SwiftUI
 
-struct DetailView: View {
+public struct DetailView: View {
 
     var repository: Repository
     @ObservedObject private var coordinator: DetailCoordinator
 
-    init(_ repository: Repository, _ coordinator: DetailCoordinator) {
+    public init(_ repository: Repository, _ coordinator: DetailCoordinator) {
         self.repository = repository
         self.coordinator = coordinator
     }
 
-    var body: some View {
+    public var body: some View {
         VStack {
             Section {
-                Spacer().frame(width: 1, height: 15, alignment: .center)
-                Text("By " + repository.owner.login)
+                Text(repository.name + " by " + repository.owner.login)
                     .font(.headline)
-                    .foregroundColor(Color.pureColor(val: 0xbd2c00ff))
                     .scaledToFit()
                 Text(repository.description ?? "")
                     .font(.subheadline)
-                    .foregroundColor(Color.pureColor(val: 0x333333ff))
-                    .padding(15)
 
                 HStack {
                     Spacer()
                     VStack {
-                        Text("⋔:").font(.headline)
+                        Text("🍴").font(.headline)
                         Text("\(repository.forks_count)")
                     }
-                    .padding(10)
-                    .foregroundColor(Color.pureColor(val: 0x6cc64477))
                     Spacer()
                     VStack {
-                        Text("✨:").font(.headline)
+                        Text("✨").font(.headline)
                         Text("\(repository.stargazers_count)")
                     }
-                    .padding(10)
-                    .foregroundColor(Color.pureColor(val: 0xc9510c77))
                     Spacer()
                     VStack {
                         Text("🚛").font(.headline)
                         Text("\(String(format:"%.2f",(Double(repository.size))/1024.0))kB")
                     }
-                    .padding(10)
-                    .foregroundColor(Color.pureColor(val: 0x6e549477))
                     Spacer()
                 }
             }
+            .padding(.top, 15)
             List {
                 Section(header: Text("Contributors")) {
                     ForEach(coordinator.contributors, id: \.id) { contribution in
@@ -86,8 +79,22 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        let repo = SearchResponseParser.mockRepositories()[0]
-        let coord = DetailCoordinator(repo)
+        let repo = Repository(id: 1,
+                              name: "Test Repo",
+                              full_name: "Test repository 123",
+                              owner: .init(login: "test user", avatarUrl: URL(string: "a")!),
+                              description: "A test repository for preview purposes",
+                              size: 300,
+                              stargazers_count: 2,
+                              forks_count: 12,
+                              contributors_url: URL(string: "https://www.google.com")!,
+                              watchers: 200)
+        let coord = DetailCoordinator(repo, fetch: { [
+            .init(id: 1,
+                  login: "test",
+                  avatarUrl: URL(string: "a")!,
+                  contributions: 1)
+        ] })
         return DetailView(repo,coord)
     }
 }

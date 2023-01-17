@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import Models
 
 class MasterCoordinator: ObservableObject {
 

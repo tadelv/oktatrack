@@ -6,6 +6,8 @@
 //  Copyright © 2019 Delta96. All rights reserved.
 //
 
+import DetailFeature
+import Models
 import SwiftUI
 
 struct ContentView: View {
@@ -37,8 +39,14 @@ struct MasterView: View {
 
     var body: some View {
         List {
-            ForEach(coordinator.repositories, id: \.self) { repo in
-                NavigationLink(destination: DetailView(repo,DetailCoordinator(repo))) {
+            ForEach(coordinator.repositories) { repo in
+                NavigationLink(destination: DetailView(repo, DetailCoordinator(repo, fetch: {
+                    try await withCheckedThrowingContinuation { continuation in
+                        GHApi.fetchContributionsAsync(repository: repo) {
+                            continuation.resume(with: .success($0))
+                        }
+                    }
+                }))) {
                     VStack(alignment: .leading, spacing: 5) {
                         Text("\(repo.full_name)").font(.headline)
                         Text("\(repo.name)").font(.subheadline)
@@ -47,8 +55,6 @@ struct MasterView: View {
                             self.listItemAppears(repo)
                     }
                 }
-                .shadow(radius: 2)
-                .accentColor(Color.pureColor(val: 0x333))
             }
         }
     }

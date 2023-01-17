@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,10 +22,10 @@
 		1838E77A2366D0FA00EE6AF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1838E7782366D0FA00EE6AF3 /* LaunchScreen.storyboard */; };
 		1838E7852366D0FA00EE6AF3 /* OktaTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E7842366D0FA00EE6AF3 /* OktaTrackTests.swift */; };
 		1838E7902366D0FA00EE6AF3 /* OktaTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E78F2366D0FA00EE6AF3 /* OktaTrackUITests.swift */; };
-		1838E79F2366D12F00EE6AF3 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E79E2366D12F00EE6AF3 /* Repository.swift */; };
-		1838E7A52366D1B800EE6AF3 /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E7A42366D1B800EE6AF3 /* Contribution.swift */; };
 		1838E7A92366D2A300EE6AF3 /* GHApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E7A82366D2A300EE6AF3 /* GHApi.swift */; };
 		1838E7AD2366D2FB00EE6AF3 /* GHApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E7AB2366D2FB00EE6AF3 /* GHApiTests.swift */; };
+		1840F6B829758A8C00FEB2F8 /* DetailFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 1840F6B729758A8C00FEB2F8 /* DetailFeature */; };
+		1840F6BA29758A8C00FEB2F8 /* Helpers in Frameworks */ = {isa = PBXBuildFile; productRef = 1840F6B929758A8C00FEB2F8 /* Helpers */; };
 		187470E0236AEA82009B9561 /* swift_repos_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470DD236AEA81009B9561 /* swift_repos_sample.json */; };
 		187470E1236AEA82009B9561 /* swift_repos_sample_page2.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470DE236AEA82009B9561 /* swift_repos_sample_page2.json */; };
 		187470E2236AEA82009B9561 /* swift_repos_sample_page1.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470DF236AEA82009B9561 /* swift_repos_sample_page1.json */; };
@@ -34,10 +34,8 @@
 		187470E9236B09AF009B9561 /* swift_contributors_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470E8236B09AF009B9561 /* swift_contributors_sample.json */; };
 		187470EA236B1131009B9561 /* swift_repos_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470DD236AEA81009B9561 /* swift_repos_sample.json */; };
 		187470EB236B1135009B9561 /* swift_contributors_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470E8236B09AF009B9561 /* swift_contributors_sample.json */; };
-		18B2831F236C3CD000850FB3 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2831E236C3CD000850FB3 /* WebImageView.swift */; };
+		187A5ED029757E23009F0BA0 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 187A5ECF29757E23009F0BA0 /* Models */; };
 		18C1575C236D17AF00E268C5 /* MasterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1575B236D17AF00E268C5 /* MasterCoordinator.swift */; };
-		18C1575E236D17B900E268C5 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1575D236D17B900E268C5 /* DetailCoordinator.swift */; };
-		18C15760236D252400E268C5 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1575F236D252400E268C5 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,8 +71,6 @@
 		1838E78B2366D0FA00EE6AF3 /* OktaTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OktaTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1838E78F2366D0FA00EE6AF3 /* OktaTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OktaTrackUITests.swift; sourceTree = "<group>"; };
 		1838E7912366D0FA00EE6AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1838E79E2366D12F00EE6AF3 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
-		1838E7A42366D1B800EE6AF3 /* Contribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contribution.swift; sourceTree = "<group>"; };
 		1838E7A82366D2A300EE6AF3 /* GHApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHApi.swift; sourceTree = "<group>"; };
 		1838E7AB2366D2FB00EE6AF3 /* GHApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHApiTests.swift; sourceTree = "<group>"; };
 		187470DD236AEA81009B9561 /* swift_repos_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swift_repos_sample.json; sourceTree = "<group>"; };
@@ -83,10 +79,8 @@
 		187470E3236AEB16009B9561 /* SearchResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseParser.swift; sourceTree = "<group>"; };
 		187470E5236AECD7009B9561 /* SearchResponseParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseParserTests.swift; sourceTree = "<group>"; };
 		187470E8236B09AF009B9561 /* swift_contributors_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swift_contributors_sample.json; sourceTree = "<group>"; };
-		18B2831E236C3CD000850FB3 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
+		1884C82229757C2000143404 /* OktatrackLib */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = OktatrackLib; sourceTree = "<group>"; };
 		18C1575B236D17AF00E268C5 /* MasterCoordinator.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = MasterCoordinator.swift; sourceTree = "<group>"; tabWidth = 2; };
-		18C1575D236D17B900E268C5 /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
-		18C1575F236D252400E268C5 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +88,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1840F6BA29758A8C00FEB2F8 /* Helpers in Frameworks */,
+				1840F6B829758A8C00FEB2F8 /* DetailFeature in Frameworks */,
+				187A5ED029757E23009F0BA0 /* Models in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,10 +114,12 @@
 		1838E7612366D0F500EE6AF3 = {
 			isa = PBXGroup;
 			children = (
+				1884C82229757C2000143404 /* OktatrackLib */,
 				1838E76C2366D0F500EE6AF3 /* OktaTrack */,
 				1838E7832366D0FA00EE6AF3 /* OktaTrackTests */,
 				1838E78E2366D0FA00EE6AF3 /* OktaTrackUITests */,
 				1838E76B2366D0F500EE6AF3 /* Products */,
+				187A5ECE29757E23009F0BA0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,8 +185,6 @@
 		1838E79D2366D11200EE6AF3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				1838E79E2366D12F00EE6AF3 /* Repository.swift */,
-				1838E7A42366D1B800EE6AF3 /* Contribution.swift */,
 				187470E3236AEB16009B9561 /* SearchResponseParser.swift */,
 			);
 			path = Data;
@@ -201,14 +198,18 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		187A5ECE29757E23009F0BA0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		18B2831D236C3CBA00850FB3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				18C1575F236D252400E268C5 /* DetailView.swift */,
 				1838E7712366D0F500EE6AF3 /* ContentView.swift */,
-				18B2831E236C3CD000850FB3 /* WebImageView.swift */,
 				18C1575B236D17AF00E268C5 /* MasterCoordinator.swift */,
-				18C1575D236D17B900E268C5 /* DetailCoordinator.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,6 +230,11 @@
 			dependencies = (
 			);
 			name = OktaTrack;
+			packageProductDependencies = (
+				187A5ECF29757E23009F0BA0 /* Models */,
+				1840F6B729758A8C00FEB2F8 /* DetailFeature */,
+				1840F6B929758A8C00FEB2F8 /* Helpers */,
+			);
 			productName = OktaTrack;
 			productReference = 1838E76A2366D0F500EE6AF3 /* OktaTrack.app */;
 			productType = "com.apple.product-type.application";
@@ -357,15 +363,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1838E76E2366D0F500EE6AF3 /* AppDelegate.swift in Sources */,
-				18B2831F236C3CD000850FB3 /* WebImageView.swift in Sources */,
 				1838E7702366D0F500EE6AF3 /* SceneDelegate.swift in Sources */,
-				18C1575E236D17B900E268C5 /* DetailCoordinator.swift in Sources */,
 				1838E7722366D0F500EE6AF3 /* ContentView.swift in Sources */,
 				181221A6237145D7006F212F /* Color+Hex.swift in Sources */,
-				18C15760236D252400E268C5 /* DetailView.swift in Sources */,
-				1838E79F2366D12F00EE6AF3 /* Repository.swift in Sources */,
 				1838E7A92366D2A300EE6AF3 /* GHApi.swift in Sources */,
-				1838E7A52366D1B800EE6AF3 /* Contribution.swift in Sources */,
 				18C1575C236D17AF00E268C5 /* MasterCoordinator.swift in Sources */,
 				187470E4236AEB16009B9561 /* SearchResponseParser.swift in Sources */,
 			);
@@ -714,6 +715,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1840F6B729758A8C00FEB2F8 /* DetailFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DetailFeature;
+		};
+		1840F6B929758A8C00FEB2F8 /* Helpers */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Helpers;
+		};
+		187A5ECF29757E23009F0BA0 /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Models;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1838E7622366D0F500EE6AF3 /* Project object */;
 }
