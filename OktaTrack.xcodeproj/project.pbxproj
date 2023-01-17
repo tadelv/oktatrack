@@ -35,7 +35,7 @@
 		187470EA236B1131009B9561 /* swift_repos_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470DD236AEA81009B9561 /* swift_repos_sample.json */; };
 		187470EB236B1135009B9561 /* swift_contributors_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470E8236B09AF009B9561 /* swift_contributors_sample.json */; };
 		187A5ED029757E23009F0BA0 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 187A5ECF29757E23009F0BA0 /* Models */; };
-		18C1575C236D17AF00E268C5 /* MasterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1575B236D17AF00E268C5 /* MasterCoordinator.swift */; };
+		18CE06DD2976A3CA0099B1B1 /* MasterFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 18CE06DC2976A3CA0099B1B1 /* MasterFeature */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +80,6 @@
 		187470E5236AECD7009B9561 /* SearchResponseParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseParserTests.swift; sourceTree = "<group>"; };
 		187470E8236B09AF009B9561 /* swift_contributors_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swift_contributors_sample.json; sourceTree = "<group>"; };
 		1884C82229757C2000143404 /* OktatrackLib */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = OktatrackLib; sourceTree = "<group>"; };
-		18C1575B236D17AF00E268C5 /* MasterCoordinator.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = MasterCoordinator.swift; sourceTree = "<group>"; tabWidth = 2; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1840F6BA29758A8C00FEB2F8 /* Helpers in Frameworks */,
+				18CE06DD2976A3CA0099B1B1 /* MasterFeature in Frameworks */,
 				1840F6B829758A8C00FEB2F8 /* DetailFeature in Frameworks */,
 				187A5ED029757E23009F0BA0 /* Models in Frameworks */,
 			);
@@ -209,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				1838E7712366D0F500EE6AF3 /* ContentView.swift */,
-				18C1575B236D17AF00E268C5 /* MasterCoordinator.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -234,6 +233,7 @@
 				187A5ECF29757E23009F0BA0 /* Models */,
 				1840F6B729758A8C00FEB2F8 /* DetailFeature */,
 				1840F6B929758A8C00FEB2F8 /* Helpers */,
+				18CE06DC2976A3CA0099B1B1 /* MasterFeature */,
 			);
 			productName = OktaTrack;
 			productReference = 1838E76A2366D0F500EE6AF3 /* OktaTrack.app */;
@@ -367,7 +367,6 @@
 				1838E7722366D0F500EE6AF3 /* ContentView.swift in Sources */,
 				181221A6237145D7006F212F /* Color+Hex.swift in Sources */,
 				1838E7A92366D2A300EE6AF3 /* GHApi.swift in Sources */,
-				18C1575C236D17AF00E268C5 /* MasterCoordinator.swift in Sources */,
 				187470E4236AEB16009B9561 /* SearchResponseParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -728,6 +727,10 @@
 		187A5ECF29757E23009F0BA0 /* Models */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Models;
+		};
+		18CE06DC2976A3CA0099B1B1 /* MasterFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MasterFeature;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

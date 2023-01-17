@@ -14,6 +14,8 @@ let package = Package(
                  targets: ["Helpers"]),
         .library(name: "DetailFeature",
                  targets: ["DetailFeature"]),
+        .library(name: "MasterFeature",
+                 targets: ["MasterFeature"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -27,6 +29,9 @@ let package = Package(
             dependencies: []),
         .target(name: "Helpers"),
         .target(name: "DetailFeature",
+               dependencies: ["Models",
+                              "Helpers"]),
+        .target(name: "MasterFeature",
                dependencies: ["Models",
                               "Helpers"])
     ]
