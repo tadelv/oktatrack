@@ -30,32 +30,14 @@ struct ContentView: View {
                     }
                 }))
             }
-                .navigationBarTitle(Text("Repositories"), displayMode: .automatic)
-                .navigationViewStyle(DoubleColumnNavigationViewStyle())
-//                .navigationViewStyle(StackNavigationViewStyle())
+            .navigationBarTitle(Text("Repositories"), displayMode: .automatic)
+            .navigationViewStyle(DoubleColumnNavigationViewStyle())
         }
     }
 }
-
-//    TODO: fix detail view appearing on iPad
-//    possibly a bug in SwiftUI on iPad vertical orientation
-//    if repositories.count > 0 {
-//        DetailView(selectedRepository: repositories[0])
-//    }
-//}.navigationViewStyle(StackNavigationViewStyle())
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
-//
-//
-//(destination: DetailView(repo, DetailCoordinator(repo, fetch: {
-//    try await withCheckedThrowingContinuation { continuation in
-//        GHApi.fetchContributionsAsync(repository: repo) {
-//            continuation.resume(with: .success($0))
-//        }
-//    }
-//    })))
