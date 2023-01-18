@@ -13,31 +13,39 @@ import SwiftUI
 
 struct ContentView: View {
 
-    var body: some View {
-        NavigationView {
-            MasterView { page in
-                try await withCheckedThrowingContinuation { continuation in
-                    GHApi.fetchRepositoriesAsync(page: page) { repos in
-                        continuation.resume(returning: repos)
-                    }
-                }
-            } detail: { repo in
-                DetailView(repo, DetailCoordinator(repo, fetch: {
-                    try await withCheckedThrowingContinuation { continuation in
-                        GHApi.fetchContributionsAsync(repository: repo) {
-                            continuation.resume(with: .success($0))
-                        }
-                    }
-                }))
-            }
-            .navigationBarTitle(Text("Repositories"), displayMode: .automatic)
-            .navigationViewStyle(DoubleColumnNavigationViewStyle())
-        }
+  let api: APIClient
+
+  var body: some View {
+    NavigationView {
+      MasterView { page in
+        try await api.fetchRepositories(page, 25)
+      } detail: { repo in
+        DetailView(repo, DetailCoordinator(repo, fetch: {
+          try await api.fetchContributions(repo.contributors_url)
+        }))
+      }
+      .navigationBarTitle(Text("Repositories"), displayMode: .automatic)
+      .navigationViewStyle(DoubleColumnNavigationViewStyle())
     }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView(api: APIClient { _, _ in
+      [
+        .init(id: 1,
+              name: "Preview repo",
+              full_name: "Preview repo description",
+              owner: .init(login: "Preview user", avatarUrl: .mock),
+              size: 200,
+              stargazers_count: 10,
+              forks_count: 12,
+              contributors_url: .mock,
+              watchers: 23)
+      ]
+    } fetchContributions: { _ in
+      Contribution.mock
+    })
+  }
 }
