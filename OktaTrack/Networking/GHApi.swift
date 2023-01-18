@@ -16,7 +16,8 @@ struct APIClient {
     let query = "?q=language:swift&page=\(page)&per_page=25"
     let url = UrlBuilder(path: "/search/repositories").buildUrl(query)
     let data = try await AsyncTaskBuilder(url: url).fetch()
-    return try JSONDecoder().decode([Repository].self, from: data)
+    let response = try JSONDecoder().decode(GHSearchResponseRoot.self, from: data)
+    return response.items
   }
 
   var fetchContributions: (URL) async throws -> [Contribution] = { url in

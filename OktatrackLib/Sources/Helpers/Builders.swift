@@ -60,6 +60,19 @@ public struct TaskBuilder {
 }
 
 public struct AsyncTaskBuilder {
+  enum BuilderError: LocalizedError {
+    case invalidResponse
+    case forbidden(String)
+
+    var errorDescription: String? {
+      switch self {
+      case .invalidResponse:
+        return "Invalid response"
+      case let .forbidden(message):
+        return message
+      }
+    }
+  }
   let url: URL
 
   public init(url: URL) {
@@ -71,6 +84,13 @@ public struct AsyncTaskBuilder {
     url_req.mainDocumentURL = url
     url_req.allowsExpensiveNetworkAccess = false
 
-    return try await TaskBuilder.session.data(for: url_req).0
+    let (data, response) = try await TaskBuilder.session.data(for: url_req)
+    guard let urlResponse = response as? HTTPURLResponse else {
+      throw BuilderError.invalidResponse
+    }
+    guard urlResponse.statusCode == 200 else {
+      throw BuilderError.forbidden("Status code: \(urlResponse.statusCode)")
+    }
+    return data
   }
 }
