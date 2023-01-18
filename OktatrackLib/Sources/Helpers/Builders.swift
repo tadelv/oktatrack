@@ -7,6 +7,12 @@
 
 import Foundation
 
+public extension URL {
+  static var mock: URL {
+    Self(string: "a")!
+  }
+}
+
 public struct UrlBuilder {
     static let host = "https://api.github.com"
 
@@ -51,4 +57,20 @@ public struct TaskBuilder {
         return TaskBuilder.session.dataTask(with: url_req, completionHandler: completion)
     }
 
+}
+
+public struct AsyncTaskBuilder {
+  let url: URL
+
+  public init(url: URL) {
+    self.url = url
+  }
+
+  public func fetch() async throws -> Data {
+    var url_req = URLRequest(url: url, cachePolicy: .reloadRevalidatingCacheData, timeoutInterval: 10.0)
+    url_req.mainDocumentURL = url
+    url_req.allowsExpensiveNetworkAccess = false
+
+    return try await TaskBuilder.session.data(for: url_req).0
+  }
 }

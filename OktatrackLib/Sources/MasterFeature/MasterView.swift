@@ -5,6 +5,7 @@
 //  Created by Vid Tadel on 1/17/23.
 //
 
+import Helpers
 import Models
 import SwiftUI
 
@@ -29,8 +30,8 @@ public struct MasterView<Detail: View>: View {
                     detailLink(repo)
                 } label: {
                 VStack(alignment: .leading, spacing: 5) {
-                    Text("\(repo.full_name)").font(.headline)
-                    Text("\(repo.name)").font(.subheadline)
+                    Text("\(repo.name)").font(.headline)
+                    Text("\(repo.full_name)").font(.subheadline)
                 }.padding(5)
                     .onAppear {
                         self.listItemAppears(repo)
@@ -77,11 +78,11 @@ struct MasterView_Previews: PreviewProvider {
                     results.append(Repository(id: Int(pageId) + i,
                                               name: "repo \(i + Int(pageId))",
                                               full_name: "Test repo",
-                                              owner: .init(login: "test", avatarUrl: URL(string: "a")!),
+                                              owner: .init(login: "test", avatarUrl: .mock),
                                               size: 200,
                                               stargazers_count: 200,
                                               forks_count: 200,
-                                              contributors_url: URL(string: "a")!,
+                                              contributors_url: .mock,
                                               watchers: 200))
                 }
                 return results

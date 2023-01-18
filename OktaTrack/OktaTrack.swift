@@ -12,7 +12,7 @@ import SwiftUI
 struct OktaTrack: App {
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      ContentView(api: APIClient())
     }
   }
 }

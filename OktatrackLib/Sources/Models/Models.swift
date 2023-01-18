@@ -78,3 +78,15 @@ public struct Contribution: Decodable {
     public let avatar_url: URL
     public let contributions: UInt
 }
+
+
+public extension Contribution {
+  static var mock: [Contribution] {
+    [
+      .init(id: 1,
+            login: "mock user",
+            avatarUrl: URL(string: "a")!,
+            contributions: 12)
+    ]
+  }
+}

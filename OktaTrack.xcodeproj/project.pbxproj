@@ -16,7 +16,6 @@
 		1838E7772366D0FA00EE6AF3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1838E7762366D0FA00EE6AF3 /* Preview Assets.xcassets */; };
 		1838E77A2366D0FA00EE6AF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1838E7782366D0FA00EE6AF3 /* LaunchScreen.storyboard */; };
 		1838E7A92366D2A300EE6AF3 /* GHApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E7A82366D2A300EE6AF3 /* GHApi.swift */; };
-		187470E4236AEB16009B9561 /* SearchResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187470E3236AEB16009B9561 /* SearchResponseParser.swift */; };
 		18CB9DA129781861006EAFFE /* OktaTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB9DA029781861006EAFFE /* OktaTrack.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +27,6 @@
 		1838E7792366D0FA00EE6AF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1838E77B2366D0FA00EE6AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1838E7A82366D2A300EE6AF3 /* GHApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHApi.swift; sourceTree = "<group>"; };
-		187470E3236AEB16009B9561 /* SearchResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseParser.swift; sourceTree = "<group>"; };
 		1884C82229757C2000143404 /* OktatrackLib */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = OktatrackLib; sourceTree = "<group>"; };
 		18CB9DA029781861006EAFFE /* OktaTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OktaTrack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,7 +69,6 @@
 			children = (
 				18B2831D236C3CBA00850FB3 /* Views */,
 				1838E7A72366D28A00EE6AF3 /* Networking */,
-				1838E79D2366D11200EE6AF3 /* Data */,
 				1838E7732366D0FA00EE6AF3 /* Assets.xcassets */,
 				1838E7782366D0FA00EE6AF3 /* LaunchScreen.storyboard */,
 				1838E77B2366D0FA00EE6AF3 /* Info.plist */,
@@ -87,14 +84,6 @@
 				1838E7762366D0FA00EE6AF3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		1838E79D2366D11200EE6AF3 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				187470E3236AEB16009B9561 /* SearchResponseParser.swift */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		1838E7A72366D28A00EE6AF3 /* Networking */ = {
@@ -200,7 +189,6 @@
 				1838E7722366D0F500EE6AF3 /* ContentView.swift in Sources */,
 				1838E7A92366D2A300EE6AF3 /* GHApi.swift in Sources */,
 				18CB9DA129781861006EAFFE /* OktaTrack.swift in Sources */,
-				187470E4236AEB16009B9561 /* SearchResponseParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

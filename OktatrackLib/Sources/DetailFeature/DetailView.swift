@@ -82,31 +82,14 @@ struct DetailView_Previews: PreviewProvider {
         let repo = Repository(id: 1,
                               name: "Test Repo",
                               full_name: "Test repository 123",
-                              owner: .init(login: "test user", avatarUrl: URL(string: "a")!),
+                              owner: .init(login: "test user", avatarUrl: .mock),
                               description: "A test repository for preview purposes",
                               size: 300,
                               stargazers_count: 2,
                               forks_count: 12,
                               contributors_url: URL(string: "https://www.google.com")!,
                               watchers: 200)
-        let coord = DetailCoordinator(repo, fetch: { [
-            .init(id: 1,
-                  login: "test",
-                  avatarUrl: URL(string: "a")!,
-                  contributions: 11),
-            .init(id: 1,
-                  login: "test",
-                  avatarUrl: URL(string: "a")!,
-                  contributions: 11),
-            .init(id: 1,
-                  login: "test",
-                  avatarUrl: URL(string: "a")!,
-                  contributions: 11),
-            .init(id: 1,
-                  login: "test",
-                  avatarUrl: URL(string: "a")!,
-                  contributions: 11),
-        ] })
+        let coord = DetailCoordinator(repo, fetch: { Contribution.mock })
         return DetailView(repo,coord)
     }
 }
