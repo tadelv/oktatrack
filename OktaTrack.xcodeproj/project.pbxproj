@@ -11,20 +11,17 @@
 		181703472976C345002E7569 /* Helpers in Frameworks */ = {isa = PBXBuildFile; productRef = 181703462976C345002E7569 /* Helpers */; };
 		181703492976C345002E7569 /* MasterFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 181703482976C345002E7569 /* MasterFeature */; };
 		1817034B2976C345002E7569 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 1817034A2976C345002E7569 /* Models */; };
-		1838E76E2366D0F500EE6AF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E76D2366D0F500EE6AF3 /* AppDelegate.swift */; };
-		1838E7702366D0F500EE6AF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E76F2366D0F500EE6AF3 /* SceneDelegate.swift */; };
 		1838E7722366D0F500EE6AF3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E7712366D0F500EE6AF3 /* ContentView.swift */; };
 		1838E7742366D0FA00EE6AF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1838E7732366D0FA00EE6AF3 /* Assets.xcassets */; };
 		1838E7772366D0FA00EE6AF3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1838E7762366D0FA00EE6AF3 /* Preview Assets.xcassets */; };
 		1838E77A2366D0FA00EE6AF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1838E7782366D0FA00EE6AF3 /* LaunchScreen.storyboard */; };
 		1838E7A92366D2A300EE6AF3 /* GHApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E7A82366D2A300EE6AF3 /* GHApi.swift */; };
 		187470E4236AEB16009B9561 /* SearchResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187470E3236AEB16009B9561 /* SearchResponseParser.swift */; };
+		18CB9DA129781861006EAFFE /* OktaTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB9DA029781861006EAFFE /* OktaTrack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1838E76A2366D0F500EE6AF3 /* OktaTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OktaTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1838E76D2366D0F500EE6AF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1838E76F2366D0F500EE6AF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1838E7712366D0F500EE6AF3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1838E7732366D0FA00EE6AF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1838E7762366D0FA00EE6AF3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -33,6 +30,7 @@
 		1838E7A82366D2A300EE6AF3 /* GHApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHApi.swift; sourceTree = "<group>"; };
 		187470E3236AEB16009B9561 /* SearchResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseParser.swift; sourceTree = "<group>"; };
 		1884C82229757C2000143404 /* OktatrackLib */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = OktatrackLib; sourceTree = "<group>"; };
+		18CB9DA029781861006EAFFE /* OktaTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OktaTrack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,12 +72,11 @@
 				18B2831D236C3CBA00850FB3 /* Views */,
 				1838E7A72366D28A00EE6AF3 /* Networking */,
 				1838E79D2366D11200EE6AF3 /* Data */,
-				1838E76D2366D0F500EE6AF3 /* AppDelegate.swift */,
-				1838E76F2366D0F500EE6AF3 /* SceneDelegate.swift */,
 				1838E7732366D0FA00EE6AF3 /* Assets.xcassets */,
 				1838E7782366D0FA00EE6AF3 /* LaunchScreen.storyboard */,
 				1838E77B2366D0FA00EE6AF3 /* Info.plist */,
 				1838E7752366D0FA00EE6AF3 /* Preview Content */,
+				18CB9DA029781861006EAFFE /* OktaTrack.swift */,
 			);
 			path = OktaTrack;
 			sourceTree = "<group>";
@@ -200,10 +197,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1838E76E2366D0F500EE6AF3 /* AppDelegate.swift in Sources */,
-				1838E7702366D0F500EE6AF3 /* SceneDelegate.swift in Sources */,
 				1838E7722366D0F500EE6AF3 /* ContentView.swift in Sources */,
 				1838E7A92366D2A300EE6AF3 /* GHApi.swift in Sources */,
+				18CB9DA129781861006EAFFE /* OktaTrack.swift in Sources */,
 				187470E4236AEB16009B9561 /* SearchResponseParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,6 +346,7 @@
 				DEVELOPMENT_TEAM = S3SKQLLP98;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = OktaTrack/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -373,6 +370,7 @@
 				DEVELOPMENT_TEAM = S3SKQLLP98;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = OktaTrack/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
