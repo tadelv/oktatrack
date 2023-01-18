@@ -3,62 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		181221A6237145D7006F212F /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181221A5237145D7006F212F /* Color+Hex.swift */; };
-		182166022370223C004BFE7F /* swift_contributors_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470E8236B09AF009B9561 /* swift_contributors_sample.json */; };
-		1821660323702240004BFE7F /* swift_repos_sample_page1.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470DF236AEA82009B9561 /* swift_repos_sample_page1.json */; };
-		1821660423702240004BFE7F /* swift_repos_sample_page1.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470DF236AEA82009B9561 /* swift_repos_sample_page1.json */; };
-		1821660523702243004BFE7F /* swift_repos_sample_page2.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470DE236AEA82009B9561 /* swift_repos_sample_page2.json */; };
-		1821660623702244004BFE7F /* swift_repos_sample_page2.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470DE236AEA82009B9561 /* swift_repos_sample_page2.json */; };
-		1821660723702247004BFE7F /* swift_repos_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470DD236AEA81009B9561 /* swift_repos_sample.json */; };
+		181703452976C345002E7569 /* DetailFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 181703442976C345002E7569 /* DetailFeature */; };
+		181703472976C345002E7569 /* Helpers in Frameworks */ = {isa = PBXBuildFile; productRef = 181703462976C345002E7569 /* Helpers */; };
+		181703492976C345002E7569 /* MasterFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 181703482976C345002E7569 /* MasterFeature */; };
+		1817034B2976C345002E7569 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 1817034A2976C345002E7569 /* Models */; };
 		1838E76E2366D0F500EE6AF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E76D2366D0F500EE6AF3 /* AppDelegate.swift */; };
 		1838E7702366D0F500EE6AF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E76F2366D0F500EE6AF3 /* SceneDelegate.swift */; };
 		1838E7722366D0F500EE6AF3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E7712366D0F500EE6AF3 /* ContentView.swift */; };
 		1838E7742366D0FA00EE6AF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1838E7732366D0FA00EE6AF3 /* Assets.xcassets */; };
 		1838E7772366D0FA00EE6AF3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1838E7762366D0FA00EE6AF3 /* Preview Assets.xcassets */; };
 		1838E77A2366D0FA00EE6AF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1838E7782366D0FA00EE6AF3 /* LaunchScreen.storyboard */; };
-		1838E7852366D0FA00EE6AF3 /* OktaTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E7842366D0FA00EE6AF3 /* OktaTrackTests.swift */; };
-		1838E7902366D0FA00EE6AF3 /* OktaTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E78F2366D0FA00EE6AF3 /* OktaTrackUITests.swift */; };
-		1838E79F2366D12F00EE6AF3 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E79E2366D12F00EE6AF3 /* Repository.swift */; };
-		1838E7A52366D1B800EE6AF3 /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E7A42366D1B800EE6AF3 /* Contribution.swift */; };
 		1838E7A92366D2A300EE6AF3 /* GHApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E7A82366D2A300EE6AF3 /* GHApi.swift */; };
-		1838E7AD2366D2FB00EE6AF3 /* GHApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838E7AB2366D2FB00EE6AF3 /* GHApiTests.swift */; };
-		187470E0236AEA82009B9561 /* swift_repos_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470DD236AEA81009B9561 /* swift_repos_sample.json */; };
-		187470E1236AEA82009B9561 /* swift_repos_sample_page2.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470DE236AEA82009B9561 /* swift_repos_sample_page2.json */; };
-		187470E2236AEA82009B9561 /* swift_repos_sample_page1.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470DF236AEA82009B9561 /* swift_repos_sample_page1.json */; };
 		187470E4236AEB16009B9561 /* SearchResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187470E3236AEB16009B9561 /* SearchResponseParser.swift */; };
-		187470E6236AECD7009B9561 /* SearchResponseParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187470E5236AECD7009B9561 /* SearchResponseParserTests.swift */; };
-		187470E9236B09AF009B9561 /* swift_contributors_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470E8236B09AF009B9561 /* swift_contributors_sample.json */; };
-		187470EA236B1131009B9561 /* swift_repos_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470DD236AEA81009B9561 /* swift_repos_sample.json */; };
-		187470EB236B1135009B9561 /* swift_contributors_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 187470E8236B09AF009B9561 /* swift_contributors_sample.json */; };
-		18B2831F236C3CD000850FB3 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2831E236C3CD000850FB3 /* WebImageView.swift */; };
-		18C1575C236D17AF00E268C5 /* MasterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1575B236D17AF00E268C5 /* MasterCoordinator.swift */; };
-		18C1575E236D17B900E268C5 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1575D236D17B900E268C5 /* DetailCoordinator.swift */; };
-		18C15760236D252400E268C5 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1575F236D252400E268C5 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		1838E7812366D0FA00EE6AF3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1838E7622366D0F500EE6AF3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1838E7692366D0F500EE6AF3;
-			remoteInfo = OktaTrack;
-		};
-		1838E78C2366D0FA00EE6AF3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1838E7622366D0F500EE6AF3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1838E7692366D0F500EE6AF3;
-			remoteInfo = OktaTrack;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		181221A5237145D7006F212F /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		1838E76A2366D0F500EE6AF3 /* OktaTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OktaTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1838E76D2366D0F500EE6AF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1838E76F2366D0F500EE6AF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,26 +30,9 @@
 		1838E7762366D0FA00EE6AF3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1838E7792366D0FA00EE6AF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1838E77B2366D0FA00EE6AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1838E7802366D0FA00EE6AF3 /* OktaTrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OktaTrackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1838E7842366D0FA00EE6AF3 /* OktaTrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OktaTrackTests.swift; sourceTree = "<group>"; };
-		1838E7862366D0FA00EE6AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1838E78B2366D0FA00EE6AF3 /* OktaTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OktaTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1838E78F2366D0FA00EE6AF3 /* OktaTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OktaTrackUITests.swift; sourceTree = "<group>"; };
-		1838E7912366D0FA00EE6AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1838E79E2366D12F00EE6AF3 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
-		1838E7A42366D1B800EE6AF3 /* Contribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contribution.swift; sourceTree = "<group>"; };
 		1838E7A82366D2A300EE6AF3 /* GHApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHApi.swift; sourceTree = "<group>"; };
-		1838E7AB2366D2FB00EE6AF3 /* GHApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHApiTests.swift; sourceTree = "<group>"; };
-		187470DD236AEA81009B9561 /* swift_repos_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swift_repos_sample.json; sourceTree = "<group>"; };
-		187470DE236AEA82009B9561 /* swift_repos_sample_page2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swift_repos_sample_page2.json; sourceTree = "<group>"; };
-		187470DF236AEA82009B9561 /* swift_repos_sample_page1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swift_repos_sample_page1.json; sourceTree = "<group>"; };
 		187470E3236AEB16009B9561 /* SearchResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseParser.swift; sourceTree = "<group>"; };
-		187470E5236AECD7009B9561 /* SearchResponseParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseParserTests.swift; sourceTree = "<group>"; };
-		187470E8236B09AF009B9561 /* swift_contributors_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swift_contributors_sample.json; sourceTree = "<group>"; };
-		18B2831E236C3CD000850FB3 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
-		18C1575B236D17AF00E268C5 /* MasterCoordinator.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = MasterCoordinator.swift; sourceTree = "<group>"; tabWidth = 2; };
-		18C1575D236D17B900E268C5 /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
-		18C1575F236D252400E268C5 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		1884C82229757C2000143404 /* OktatrackLib */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = OktatrackLib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,20 +40,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1838E77D2366D0FA00EE6AF3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1838E7882366D0FA00EE6AF3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				181703472976C345002E7569 /* Helpers in Frameworks */,
+				181703492976C345002E7569 /* MasterFeature in Frameworks */,
+				1817034B2976C345002E7569 /* Models in Frameworks */,
+				181703452976C345002E7569 /* DetailFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,10 +53,10 @@
 		1838E7612366D0F500EE6AF3 = {
 			isa = PBXGroup;
 			children = (
+				1884C82229757C2000143404 /* OktatrackLib */,
 				1838E76C2366D0F500EE6AF3 /* OktaTrack */,
-				1838E7832366D0FA00EE6AF3 /* OktaTrackTests */,
-				1838E78E2366D0FA00EE6AF3 /* OktaTrackUITests */,
 				1838E76B2366D0F500EE6AF3 /* Products */,
+				187A5ECE29757E23009F0BA0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,8 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				1838E76A2366D0F500EE6AF3 /* OktaTrack.app */,
-				1838E7802366D0FA00EE6AF3 /* OktaTrackTests.xctest */,
-				1838E78B2366D0FA00EE6AF3 /* OktaTrackUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,7 +80,6 @@
 				1838E7782366D0FA00EE6AF3 /* LaunchScreen.storyboard */,
 				1838E77B2366D0FA00EE6AF3 /* Info.plist */,
 				1838E7752366D0FA00EE6AF3 /* Preview Content */,
-				181221A5237145D7006F212F /* Color+Hex.swift */,
 			);
 			path = OktaTrack;
 			sourceTree = "<group>";
@@ -159,35 +92,9 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		1838E7832366D0FA00EE6AF3 /* OktaTrackTests */ = {
-			isa = PBXGroup;
-			children = (
-				187470E8236B09AF009B9561 /* swift_contributors_sample.json */,
-				187470DF236AEA82009B9561 /* swift_repos_sample_page1.json */,
-				187470DE236AEA82009B9561 /* swift_repos_sample_page2.json */,
-				187470DD236AEA81009B9561 /* swift_repos_sample.json */,
-				1838E7842366D0FA00EE6AF3 /* OktaTrackTests.swift */,
-				1838E7862366D0FA00EE6AF3 /* Info.plist */,
-				1838E7AB2366D2FB00EE6AF3 /* GHApiTests.swift */,
-				187470E5236AECD7009B9561 /* SearchResponseParserTests.swift */,
-			);
-			path = OktaTrackTests;
-			sourceTree = "<group>";
-		};
-		1838E78E2366D0FA00EE6AF3 /* OktaTrackUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1838E78F2366D0FA00EE6AF3 /* OktaTrackUITests.swift */,
-				1838E7912366D0FA00EE6AF3 /* Info.plist */,
-			);
-			path = OktaTrackUITests;
-			sourceTree = "<group>";
-		};
 		1838E79D2366D11200EE6AF3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				1838E79E2366D12F00EE6AF3 /* Repository.swift */,
-				1838E7A42366D1B800EE6AF3 /* Contribution.swift */,
 				187470E3236AEB16009B9561 /* SearchResponseParser.swift */,
 			);
 			path = Data;
@@ -201,14 +108,17 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		187A5ECE29757E23009F0BA0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		18B2831D236C3CBA00850FB3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				18C1575F236D252400E268C5 /* DetailView.swift */,
 				1838E7712366D0F500EE6AF3 /* ContentView.swift */,
-				18B2831E236C3CD000850FB3 /* WebImageView.swift */,
-				18C1575B236D17AF00E268C5 /* MasterCoordinator.swift */,
-				18C1575D236D17B900E268C5 /* DetailCoordinator.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,45 +139,15 @@
 			dependencies = (
 			);
 			name = OktaTrack;
+			packageProductDependencies = (
+				181703442976C345002E7569 /* DetailFeature */,
+				181703462976C345002E7569 /* Helpers */,
+				181703482976C345002E7569 /* MasterFeature */,
+				1817034A2976C345002E7569 /* Models */,
+			);
 			productName = OktaTrack;
 			productReference = 1838E76A2366D0F500EE6AF3 /* OktaTrack.app */;
 			productType = "com.apple.product-type.application";
-		};
-		1838E77F2366D0FA00EE6AF3 /* OktaTrackTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1838E7972366D0FB00EE6AF3 /* Build configuration list for PBXNativeTarget "OktaTrackTests" */;
-			buildPhases = (
-				1838E77C2366D0FA00EE6AF3 /* Sources */,
-				1838E77D2366D0FA00EE6AF3 /* Frameworks */,
-				1838E77E2366D0FA00EE6AF3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1838E7822366D0FA00EE6AF3 /* PBXTargetDependency */,
-			);
-			name = OktaTrackTests;
-			productName = OktaTrackTests;
-			productReference = 1838E7802366D0FA00EE6AF3 /* OktaTrackTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		1838E78A2366D0FA00EE6AF3 /* OktaTrackUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1838E79A2366D0FB00EE6AF3 /* Build configuration list for PBXNativeTarget "OktaTrackUITests" */;
-			buildPhases = (
-				1838E7872366D0FA00EE6AF3 /* Sources */,
-				1838E7882366D0FA00EE6AF3 /* Frameworks */,
-				1838E7892366D0FA00EE6AF3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1838E78D2366D0FA00EE6AF3 /* PBXTargetDependency */,
-			);
-			name = OktaTrackUITests;
-			productName = OktaTrackUITests;
-			productReference = 1838E78B2366D0FA00EE6AF3 /* OktaTrackUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -281,14 +161,6 @@
 				TargetAttributes = {
 					1838E7692366D0F500EE6AF3 = {
 						CreatedOnToolsVersion = 11.1;
-					};
-					1838E77F2366D0FA00EE6AF3 = {
-						CreatedOnToolsVersion = 11.1;
-						TestTargetID = 1838E7692366D0F500EE6AF3;
-					};
-					1838E78A2366D0FA00EE6AF3 = {
-						CreatedOnToolsVersion = 11.1;
-						TestTargetID = 1838E7692366D0F500EE6AF3;
 					};
 				};
 			};
@@ -306,8 +178,6 @@
 			projectRoot = "";
 			targets = (
 				1838E7692366D0F500EE6AF3 /* OktaTrack */,
-				1838E77F2366D0FA00EE6AF3 /* OktaTrackTests */,
-				1838E78A2366D0FA00EE6AF3 /* OktaTrackUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -317,35 +187,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				187470EB236B1135009B9561 /* swift_contributors_sample.json in Resources */,
 				1838E77A2366D0FA00EE6AF3 /* LaunchScreen.storyboard in Resources */,
-				187470EA236B1131009B9561 /* swift_repos_sample.json in Resources */,
 				1838E7772366D0FA00EE6AF3 /* Preview Assets.xcassets in Resources */,
-				1821660523702243004BFE7F /* swift_repos_sample_page2.json in Resources */,
-				1821660423702240004BFE7F /* swift_repos_sample_page1.json in Resources */,
 				1838E7742366D0FA00EE6AF3 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1838E77E2366D0FA00EE6AF3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				187470E0236AEA82009B9561 /* swift_repos_sample.json in Resources */,
-				187470E9236B09AF009B9561 /* swift_contributors_sample.json in Resources */,
-				187470E2236AEA82009B9561 /* swift_repos_sample_page1.json in Resources */,
-				187470E1236AEA82009B9561 /* swift_repos_sample_page2.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1838E7892366D0FA00EE6AF3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1821660623702244004BFE7F /* swift_repos_sample_page2.json in Resources */,
-				1821660723702247004BFE7F /* swift_repos_sample.json in Resources */,
-				1821660323702240004BFE7F /* swift_repos_sample_page1.json in Resources */,
-				182166022370223C004BFE7F /* swift_contributors_sample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,52 +201,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1838E76E2366D0F500EE6AF3 /* AppDelegate.swift in Sources */,
-				18B2831F236C3CD000850FB3 /* WebImageView.swift in Sources */,
 				1838E7702366D0F500EE6AF3 /* SceneDelegate.swift in Sources */,
-				18C1575E236D17B900E268C5 /* DetailCoordinator.swift in Sources */,
 				1838E7722366D0F500EE6AF3 /* ContentView.swift in Sources */,
-				181221A6237145D7006F212F /* Color+Hex.swift in Sources */,
-				18C15760236D252400E268C5 /* DetailView.swift in Sources */,
-				1838E79F2366D12F00EE6AF3 /* Repository.swift in Sources */,
 				1838E7A92366D2A300EE6AF3 /* GHApi.swift in Sources */,
-				1838E7A52366D1B800EE6AF3 /* Contribution.swift in Sources */,
-				18C1575C236D17AF00E268C5 /* MasterCoordinator.swift in Sources */,
 				187470E4236AEB16009B9561 /* SearchResponseParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1838E77C2366D0FA00EE6AF3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1838E7852366D0FA00EE6AF3 /* OktaTrackTests.swift in Sources */,
-				1838E7AD2366D2FB00EE6AF3 /* GHApiTests.swift in Sources */,
-				187470E6236AECD7009B9561 /* SearchResponseParserTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1838E7872366D0FA00EE6AF3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1838E7902366D0FA00EE6AF3 /* OktaTrackUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		1838E7822366D0FA00EE6AF3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1838E7692366D0F500EE6AF3 /* OktaTrack */;
-			targetProxy = 1838E7812366D0FA00EE6AF3 /* PBXContainerItemProxy */;
-		};
-		1838E78D2366D0FA00EE6AF3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1838E7692366D0F500EE6AF3 /* OktaTrack */;
-			targetProxy = 1838E78C2366D0FA00EE6AF3 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1838E7782366D0FA00EE6AF3 /* LaunchScreen.storyboard */ = {
@@ -467,7 +273,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -523,7 +329,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -538,17 +344,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"OktaTrack/Preview Content\"";
-				DEVELOPMENT_TEAM = 83EHXXK8W9;
+				DEVELOPMENT_TEAM = S3SKQLLP98;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = OktaTrack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.tadel.delta96.OktaTrack;
+				PRODUCT_BUNDLE_IDENTIFIER = net.tadel.OktaTrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -558,119 +367,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"OktaTrack/Preview Content\"";
-				DEVELOPMENT_TEAM = 83EHXXK8W9;
+				DEVELOPMENT_TEAM = S3SKQLLP98;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = OktaTrack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.tadel.delta96.OktaTrack;
+				PRODUCT_BUNDLE_IDENTIFIER = net.tadel.OktaTrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		1838E7982366D0FB00EE6AF3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 83EHXXK8W9;
-				ENABLE_BITCODE = YES;
-				GENERATE_PROFILING_CODE = YES;
-				INFOPLIST_FILE = OktaTrackTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.tadel.delta96.OktaTrackTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OktaTrack.app/OktaTrack";
-			};
-			name = Debug;
-		};
-		1838E7992366D0FB00EE6AF3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 83EHXXK8W9;
-				ENABLE_BITCODE = YES;
-				GENERATE_PROFILING_CODE = YES;
-				INFOPLIST_FILE = OktaTrackTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.tadel.delta96.OktaTrackTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OktaTrack.app/OktaTrack";
-			};
-			name = Release;
-		};
-		1838E79B2366D0FB00EE6AF3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 83EHXXK8W9;
-				ENABLE_BITCODE = YES;
-				GENERATE_PROFILING_CODE = YES;
-				INFOPLIST_FILE = OktaTrackUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = net.tadel.delta96.OktaTrackUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = OktaTrack;
-				WARNING_CFLAGS = "-v";
-			};
-			name = Debug;
-		};
-		1838E79C2366D0FB00EE6AF3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 83EHXXK8W9;
-				ENABLE_BITCODE = YES;
-				GENERATE_PROFILING_CODE = YES;
-				INFOPLIST_FILE = OktaTrackUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = net.tadel.delta96.OktaTrackUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = OktaTrack;
-				WARNING_CFLAGS = "-v";
 			};
 			name = Release;
 		};
@@ -695,25 +407,26 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1838E7972366D0FB00EE6AF3 /* Build configuration list for PBXNativeTarget "OktaTrackTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1838E7982366D0FB00EE6AF3 /* Debug */,
-				1838E7992366D0FB00EE6AF3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1838E79A2366D0FB00EE6AF3 /* Build configuration list for PBXNativeTarget "OktaTrackUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1838E79B2366D0FB00EE6AF3 /* Debug */,
-				1838E79C2366D0FB00EE6AF3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		181703442976C345002E7569 /* DetailFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DetailFeature;
+		};
+		181703462976C345002E7569 /* Helpers */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Helpers;
+		};
+		181703482976C345002E7569 /* MasterFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MasterFeature;
+		};
+		1817034A2976C345002E7569 /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Models;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1838E7622366D0F500EE6AF3 /* Project object */;
 }
