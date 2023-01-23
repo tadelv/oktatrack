@@ -16,7 +16,7 @@ public struct MasterView<Detail: View>: View {
 
     private let detailLink: (Repository) -> Detail
 
-    public init(fetch: @escaping (UInt) async throws -> [Repository],
+    public init(fetch: @escaping (UInt, UInt) async throws -> [Repository],
                 detail: @escaping (Repository) -> Detail) {
         self.detailLink = detail
         _coordinator = ObservedObject(wrappedValue: MasterCoordinator(fetch))
@@ -71,10 +71,10 @@ extension RandomAccessCollection where Self.Element: Identifiable {
 struct MasterView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            MasterView { page in
+            MasterView { page, pageSize in
                 var results: [Repository] = []
-                let pageId = page * 25
-                for i in 1...25 {
+                let pageId = page * pageSize
+                for i in 1...Int(pageSize) {
                     results.append(Repository(id: Int(pageId) + i,
                                               name: "repo \(i + Int(pageId))",
                                               full_name: "Test repo",

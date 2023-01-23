@@ -14,18 +14,18 @@ public class MasterCoordinator: ObservableObject {
 
     @Published var repositories = [Repository]()
     private var page_offset: UInt = 0
-    private (set) var page_size = 25
+    private (set) var page_size: UInt = 25
 
-    private let fetch: (UInt) async throws -> [Repository]
+    private let fetch: (UInt, UInt) async throws -> [Repository]
 
-    public init(_ fetch: @escaping (UInt) async throws -> [Repository]) {
+    public init(_ fetch: @escaping (UInt, UInt) async throws -> [Repository]) {
         self.fetch = fetch
     }
 
     func requestFresh() {
         Task {
             do {
-                let repos = try await fetch(page_offset)
+                let repos = try await fetch(page_offset, page_size)
                 await MainActor.run { [weak self] in
                     guard let self else {
                         return
