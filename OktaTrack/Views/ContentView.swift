@@ -17,8 +17,8 @@ struct ContentView: View {
 
   var body: some View {
     NavigationView {
-      MasterView { page in
-        try await api.fetchRepositories(page, 25)
+      MasterView { page, perPage in
+        try await api.fetchRepositories(page, perPage)
       } detail: { repo in
         DetailView(repo, DetailCoordinator(repo, fetch: {
           try await api.fetchContributions(repo.contributors_url)
