@@ -10,6 +10,7 @@ import Foundation
 import Combine
 import Models
 
+@MainActor
 public class MasterCoordinator: ObservableObject {
 
     @Published var repositories = [Repository]()
@@ -22,24 +23,17 @@ public class MasterCoordinator: ObservableObject {
         self.fetch = fetch
     }
 
-    func requestFresh() {
-        Task {
-            do {
-                let repos = try await fetch(page_offset, page_size)
-                await MainActor.run { [weak self] in
-                    guard let self else {
-                        return
-                    }
-                    self.repositories.append(contentsOf: repos.filter {
-                        !self.repositories.contains($0)
-                    })
-                    if repos.count >= self.page_size {
-                        self.page_offset += 1
-                    }
-                }
-            } catch {
-                print("Unhandled error: \(error)")
+    func requestFresh() async {
+        do {
+            let repos = try await fetch(page_offset, page_size)
+            self.repositories.append(contentsOf: repos.filter {
+                !self.repositories.contains($0)
+            })
+            if repos.count >= self.page_size {
+                self.page_offset += 1
             }
+        } catch {
+            print("Unhandled error: \(error)")
         }
     }
 }

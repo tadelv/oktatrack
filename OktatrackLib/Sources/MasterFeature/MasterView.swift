@@ -20,7 +20,6 @@ public struct MasterView<Detail: View>: View {
                 detail: @escaping (Repository) -> Detail) {
         self.detailLink = detail
         _coordinator = ObservedObject(wrappedValue: MasterCoordinator(fetch))
-        coordinator.requestFresh()
     }
 
     public var body: some View {
@@ -39,13 +38,18 @@ public struct MasterView<Detail: View>: View {
             }
             }
         }
+        .task {
+            await coordinator.requestFresh()
+        }
     }
 }
 
 extension MasterView {
     private func listItemAppears<Item: Identifiable>(_ item: Item) {
         if coordinator.repositories.isThresholdItem(offset: offset, item: item) {
-            coordinator.requestFresh()
+          Task {
+              await coordinator.requestFresh()
+          }
         }
     }
 }
