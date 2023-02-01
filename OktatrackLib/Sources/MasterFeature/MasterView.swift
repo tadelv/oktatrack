@@ -12,7 +12,7 @@ import SwiftUI
 public struct MasterView<Detail: View>: View {
 
     @ObservedObject private var coordinator: MasterCoordinator
-    private let offset: Int = 10
+    private let offset: Int = 5
 
     private let detailLink: (Repository) -> Detail
 
@@ -31,10 +31,11 @@ public struct MasterView<Detail: View>: View {
                 VStack(alignment: .leading, spacing: 5) {
                     Text("\(repo.name)").font(.headline)
                     Text("\(repo.full_name)").font(.subheadline)
-                }.padding(5)
-                    .onAppear {
-                        self.listItemAppears(repo)
-                    }
+                }
+                .padding(5)
+                .onAppear {
+                  self.listItemAppeared(repo)
+                }
             }
             }
         }
@@ -45,7 +46,7 @@ public struct MasterView<Detail: View>: View {
 }
 
 extension MasterView {
-    private func listItemAppears<Item: Identifiable>(_ item: Item) {
+    private func listItemAppeared(_ item: Repository) {
         if coordinator.repositories.isThresholdItem(offset: offset, item: item) {
           Task {
               await coordinator.requestFresh()
@@ -56,13 +57,13 @@ extension MasterView {
 
 // pagination
 extension RandomAccessCollection where Self.Element: Identifiable {
-    func isThresholdItem<Item: Identifiable>(offset: Int,
-                                             item: Item) -> Bool {
+    func isThresholdItem<Item>(offset: Int,
+                               item: Item) -> Bool where Item == Self.Element {
         guard !isEmpty else {
             return false
         }
 
-        guard let itemIndex = firstIndex(where: { AnyHashable($0.id) == AnyHashable(item.id) }) else {
+        guard let itemIndex = firstIndex(where: { $0.id == item.id }) else {
             return false
         }
 
@@ -82,7 +83,7 @@ struct MasterView_Previews: PreviewProvider {
                     results.append(Repository(id: Int(pageId) + i,
                                               name: "repo \(i + Int(pageId))",
                                               full_name: "Test repo",
-                                              owner: .init(login: "test", avatarUrl: .mock),
+                                              owner: .mock,
                                               size: 200,
                                               stargazers_count: 200,
                                               forks_count: 200,
@@ -93,6 +94,7 @@ struct MasterView_Previews: PreviewProvider {
             } detail: { repo in
                 Text("Detail for \(repo.name)")
             }
+            .navigationTitle("List")
         }
     }
 }
