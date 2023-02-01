@@ -27,6 +27,12 @@ public struct Author: Decodable, Equatable {
     public let avatar_url: URL
 }
 
+extension Author {
+  public static var mock: Author {
+    .init(login: "test user", avatarUrl: URL(string: "a")!)
+  }
+}
+
 public struct Repository: Decodable, Equatable, Identifiable {
     public init(id: Int,
                 name: String,
@@ -60,6 +66,21 @@ public struct Repository: Decodable, Equatable, Identifiable {
     public let forks_count: UInt
     public let contributors_url: URL
     public let watchers: UInt
+}
+
+extension Repository {
+  public static var mock: Repository {
+    Repository(id: 1,
+               name: "Test Repo",
+               full_name: "Test repository 123",
+               owner: .mock,
+               description: "A test repository for preview purposes",
+               size: 300,
+               stargazers_count: 2,
+               forks_count: 12,
+               contributors_url: URL(string: "a")!,
+               watchers: 200)
+  }
 }
 
 public struct Contribution: Decodable {
