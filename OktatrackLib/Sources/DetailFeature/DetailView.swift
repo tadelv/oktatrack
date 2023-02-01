@@ -47,12 +47,12 @@ public struct DetailView: View {
                     }
                     Spacer()
                 }
+                .padding()
             }
-            .padding(.top, 15)
             List {
                 Section(header: Text("Contributors")) {
                     ForEach(coordinator.contributors, id: \.id) { contribution in
-                        HStack(spacing: 5) {
+                        HStack {
                             WebImageView(url: contribution.avatar_url)
                                 .frame(width: 40, height: 40)
                                 .clipShape(Circle())
@@ -69,8 +69,8 @@ public struct DetailView: View {
                 }
             }
         }
-        .onAppear {
-            coordinator.fetchContributors()
+        .task {
+            await coordinator.fetchContributors()
         }
         .navigationBarTitle(Text(repository.name), displayMode: .inline)
     }
@@ -79,17 +79,7 @@ public struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        let repo = Repository(id: 1,
-                              name: "Test Repo",
-                              full_name: "Test repository 123",
-                              owner: .init(login: "test user", avatarUrl: .mock),
-                              description: "A test repository for preview purposes",
-                              size: 300,
-                              stargazers_count: 2,
-                              forks_count: 12,
-                              contributors_url: URL(string: "https://www.google.com")!,
-                              watchers: 200)
-        let coord = DetailCoordinator(repo, fetch: { Contribution.mock })
-        return DetailView(repo,coord)
+        DetailView(.mock,
+                   DetailCoordinator(.mock, fetch: { Contribution.mock }))
     }
 }
