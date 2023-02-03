@@ -16,16 +16,12 @@ struct ContentView: View {
   let api: APIClient
 
   var body: some View {
-    NavigationView {
-      MasterView { page, perPage in
-        try await api.fetchRepositories(page, perPage)
-      } detail: { repo in
-        DetailView(repo, DetailCoordinator(repo, fetch: {
-          try await api.fetchContributions(repo.contributors_url)
-        }))
-      }
-      .navigationBarTitle(Text("Repositories"), displayMode: .automatic)
-      .navigationViewStyle(DoubleColumnNavigationViewStyle())
+    MasterView { page, perPage in
+      try await api.fetchRepositories(page, perPage)
+    } detail: { repo in
+      DetailView(repo, DetailCoordinator(repo, fetch: {
+        try await api.fetchContributions(repo.contributors_url)
+      }))
     }
   }
 }

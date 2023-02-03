@@ -21,14 +21,14 @@
 
 /* Begin PBXFileReference section */
 		1838E76A2366D0F500EE6AF3 /* OktaTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OktaTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1838E7712366D0F500EE6AF3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1838E7712366D0F500EE6AF3 /* ContentView.swift */ = {isa = PBXFileReference;  lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>";  };
 		1838E7732366D0FA00EE6AF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1838E7762366D0FA00EE6AF3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1838E7792366D0FA00EE6AF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1838E77B2366D0FA00EE6AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1838E7A82366D2A300EE6AF3 /* GHApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHApi.swift; sourceTree = "<group>"; };
 		1884C82229757C2000143404 /* OktatrackLib */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = OktatrackLib; sourceTree = "<group>"; };
-		18CB9DA029781861006EAFFE /* OktaTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OktaTrack.swift; sourceTree = "<group>"; };
+		18CB9DA029781861006EAFFE /* OktaTrack.swift */ = {isa = PBXFileReference;  lastKnownFileType = sourcecode.swift; path = OktaTrack.swift; sourceTree = "<group>";  };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +54,9 @@
 				1838E76B2366D0F500EE6AF3 /* Products */,
 				187A5ECE29757E23009F0BA0 /* Frameworks */,
 			);
-			indentWidth = 4;
+			
 			sourceTree = "<group>";
-			tabWidth = 4;
+			
 		};
 		1838E76B2366D0F500EE6AF3 /* Products */ = {
 			isa = PBXGroup;
@@ -337,7 +337,7 @@
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = OktaTrack/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -361,7 +361,7 @@
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = OktaTrack/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

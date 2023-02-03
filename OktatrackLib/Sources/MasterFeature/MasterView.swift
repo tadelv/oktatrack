@@ -11,38 +11,55 @@ import SwiftUI
 
 public struct MasterView<Detail: View>: View {
 
-    @ObservedObject private var coordinator: MasterCoordinator
-    private let offset: Int = 5
+  @ObservedObject private var coordinator: MasterCoordinator
+  @State private var selectedRepo: Repository?
 
-    private let detailLink: (Repository) -> Detail
+  private let offset: Int = 5
 
-    public init(fetch: @escaping (UInt, UInt) async throws -> [Repository],
-                detail: @escaping (Repository) -> Detail) {
-        self.detailLink = detail
-        _coordinator = ObservedObject(wrappedValue: MasterCoordinator(fetch))
-    }
+  @ViewBuilder
+  private var detailLink: (Repository) -> Detail
 
-    public var body: some View {
-        List {
-            ForEach(coordinator.repositories) { repo in
-                NavigationLink {
-                    detailLink(repo)
-                } label: {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("\(repo.name)").font(.headline)
-                    Text("\(repo.full_name)").font(.subheadline)
-                }
-                .padding(5)
-                .onAppear {
-                  self.listItemAppeared(repo)
-                }
+  public init(fetch: @escaping (UInt, UInt) async throws -> [Repository],
+              detail: @escaping (Repository) -> Detail) {
+    self.detailLink = detail
+    _coordinator = ObservedObject(wrappedValue: MasterCoordinator(fetch))
+  }
+
+  public var body: some View {
+    NavigationStack {
+      List {
+        ForEach(coordinator.repositories) { repo in
+          NavigationLink {
+            detailLink(repo)
+          } label: {
+            VStack(alignment: .leading, spacing: 5) {
+              Text("\(repo.name)").font(.headline)
+              Text("\(repo.full_name)").font(.subheadline)
             }
+            .padding(5)
+            .onAppear {
+              self.listItemAppeared(repo)
             }
+          }
         }
-        .task {
-            await coordinator.requestFresh()
+      }
+      .navigationTitle("Repositories")
+      .navigationDestination(isPresented: .init(get: {
+        self.selectedRepo != nil
+      }, set: {
+        if !$0 {
+          self.selectedRepo = nil
         }
+      })) {
+        if let selectedRepo {
+          detailLink(selectedRepo)
+        }
+      }
+      .task {
+        await coordinator.requestFresh()
+      }
     }
+  }
 }
 
 extension MasterView {
@@ -74,27 +91,24 @@ extension RandomAccessCollection where Self.Element: Identifiable {
 }
 
 struct MasterView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            MasterView { page, pageSize in
-                var results: [Repository] = []
-                let pageId = page * pageSize
-                for i in 1...Int(pageSize) {
-                    results.append(Repository(id: Int(pageId) + i,
-                                              name: "repo \(i + Int(pageId))",
-                                              full_name: "Test repo",
-                                              owner: .mock,
-                                              size: 200,
-                                              stargazers_count: 200,
-                                              forks_count: 200,
-                                              contributors_url: .mock,
-                                              watchers: 200))
-                }
-                return results
-            } detail: { repo in
-                Text("Detail for \(repo.name)")
-            }
-            .navigationTitle("List")
-        }
+  static var previews: some View {
+    MasterView { page, pageSize in
+      var results: [Repository] = []
+      let pageId = page * pageSize
+      for i in 1...Int(pageSize) {
+        results.append(Repository(id: Int(pageId) + i,
+                                  name: "repo \(i + Int(pageId))",
+                                  full_name: "Test repo",
+                                  owner: .mock,
+                                  size: 200,
+                                  stargazers_count: 200,
+                                  forks_count: 200,
+                                  contributors_url: .mock,
+                                  watchers: 200))
+      }
+      return results
+    } detail: { repo in
+      Text("Detail for \(repo.name)")
     }
+  }
 }

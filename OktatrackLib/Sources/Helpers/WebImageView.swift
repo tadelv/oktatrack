@@ -21,6 +21,9 @@ public struct WebImageView: View {
         Image(uiImage: downloader.image)
             .resizable()
             .aspectRatio(contentMode: .fit)
+            .task {
+              await downloader.loadImage()
+            }
     }
 }
 
@@ -34,26 +37,29 @@ final class ImageDownloader: ObservableObject {
     
     @Published private(set) var state = State.Waiting
     @Published private(set) var image = UIImage()
+
+  private let url: URL
     
     init(url: URL) {
-        let task = TaskBuilder(url: url) { (data, response, error) in
-            DispatchQueue.main.async {
-                self.state = .Finished
-            }
-            guard let data = data else {
-                return
-            }
-            guard let img = UIImage(data: data) else {
-                print("bad image data...")
-                return
-            }
-            DispatchQueue.main.async {
-                self.image = img
-            }
-        }
-        state = .Downloading
-        task.build().resume()
+      self.url = url
     }
+
+  @MainActor
+  func loadImage() async {
+    state = .Downloading
+    do {
+      let (data, _) = try await URLSession.shared.data(from: url)
+      guard let img = UIImage(data: data) else {
+        print("bad image data...")
+        return
+      }
+      self.state = .Finished
+      self.image = img
+    } catch {
+      print("Image download failed: \(error)")
+      return
+    }
+  }
     
     
 }
