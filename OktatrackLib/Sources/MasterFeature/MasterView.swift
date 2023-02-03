@@ -29,47 +29,42 @@ public struct MasterView<Detail: View>: View {
     NavigationStack {
       List {
         ForEach(coordinator.repositories) { repo in
-          NavigationLink {
-            detailLink(repo)
-          } label: {
+          HStack {
             VStack(alignment: .leading, spacing: 5) {
               Text("\(repo.name)").font(.headline)
               Text("\(repo.full_name)").font(.subheadline)
             }
-            .padding(5)
-            .onAppear {
-              self.listItemAppeared(repo)
-            }
+            Spacer()
+          }
+          .contentShape(Rectangle())
+          .padding(5)
+          .onAppear {
+            self.listItemAppeared(repo)
+          }
+          .onTapGesture {
+            self.selectedRepo = repo
           }
         }
       }
+      .navigateIfValue($selectedRepo) { repo in
+        detailLink(repo)
+      }
       .navigationTitle("Repositories")
-      .navigationDestination(isPresented: .init(get: {
-        self.selectedRepo != nil
-      }, set: {
-        if !$0 {
-          self.selectedRepo = nil
-        }
-      })) {
-        if let selectedRepo {
-          detailLink(selectedRepo)
-        }
-      }
-      .task {
-        await coordinator.requestFresh()
-      }
+    }
+    .task {
+      await coordinator.requestFresh()
     }
   }
 }
 
 extension MasterView {
-    private func listItemAppeared(_ item: Repository) {
-        if coordinator.repositories.isThresholdItem(offset: offset, item: item) {
-          Task {
-              await coordinator.requestFresh()
-          }
-        }
+  private func listItemAppeared(_ item: Repository) {
+    if coordinator.repositories.isThresholdItem(offset: offset, item: item) {
+      Task {
+        await coordinator.requestFresh()
+      }
     }
+  }
 }
 
 // pagination
