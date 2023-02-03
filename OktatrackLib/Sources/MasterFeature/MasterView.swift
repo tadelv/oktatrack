@@ -14,15 +14,16 @@ public struct MasterView<Detail: View>: View {
   @ObservedObject private var coordinator: MasterCoordinator
   @State private var selectedRepo: Repository?
 
-    private let offset: Int = 5
+  private let offset: Int = 5
 
-    private let detailLink: (Repository) -> Detail
+  @ViewBuilder
+  private var detailLink: (Repository) -> Detail
 
-    public init(fetch: @escaping (UInt, UInt) async throws -> [Repository],
-                detail: @escaping (Repository) -> Detail) {
-        self.detailLink = detail
-        _coordinator = ObservedObject(wrappedValue: MasterCoordinator(fetch))
-    }
+  public init(fetch: @escaping (UInt, UInt) async throws -> [Repository],
+              detail: @escaping (Repository) -> Detail) {
+    self.detailLink = detail
+    _coordinator = ObservedObject(wrappedValue: MasterCoordinator(fetch))
+  }
 
   public var body: some View {
     NavigationStack {

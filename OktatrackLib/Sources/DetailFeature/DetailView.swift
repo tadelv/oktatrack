@@ -11,9 +11,19 @@ import Helpers
 import SwiftUI
 
 public struct DetailView: View {
+  struct PreferenceKey: SwiftUI.PreferenceKey {
+    static var defaultValue: CGPoint { .zero }
+
+    static func reduce(value: inout CGPoint, nextValue: () -> CGPoint) {
+      value = nextValue()
+    }
+  }
   
   var repository: Repository
   @ObservedObject private var coordinator: DetailCoordinator
+  @State var position: CGPoint = .zero
+
+  private let coordinateSpaceName = UUID()
   
   public init(_ repository: Repository, _ coordinator: DetailCoordinator) {
     self.repository = repository
@@ -21,14 +31,54 @@ public struct DetailView: View {
   }
 
   public var body: some View {
-    VStack(alignment: .leading) {
-      Text("by " + repository.owner.login)
-        .font(.headline)
-        .scaledToFit()
+    ScrollView {
+      LazyVStack {
+        RepoStatsView(repository: repository, position: position.y)
+          .background(GeometryReader { geometry in
+            Color.clear.preference(
+              key: PreferenceKey.self,
+              value: geometry.frame(in: .named(coordinateSpaceName)).origin
+            )
+          })
+          .onPreferenceChange(PreferenceKey.self) { position in
+            self.position = position
+          }
+
+        HStack {
+          Text("Contributors")
+            .font(.headline)
+          Spacer()
+        }
+        .padding([.leading, .trailing, .top])
+        ForEach(coordinator.contributors, id: \.id) { contribution in
+          ContributorView(contribution: contribution)
+            .padding([.leading, .trailing])
+        }
+      }
+    }
+    .coordinateSpace(name: coordinateSpaceName)
+    .navigationTitle(repository.name)
+    .task {
+      await coordinator.fetchContributors()
+    }
+  }
+}
+
+struct RepoStatsView: View {
+  let repository: Repository
+  let position: Double
+
+  var body: some View {
+    VStack(spacing: spacing) {
+      HStack {
+        Text("by " + repository.owner.login)
+          .font(.headline)
+        Spacer()
+      }
         .padding([.leading, .trailing])
       Text(repository.description ?? "")
         .font(.subheadline)
-        .padding()
+        .padding([.leading, .trailing])
       HStack {
         Spacer()
         VStack {
@@ -47,29 +97,37 @@ public struct DetailView: View {
         }
         Spacer()
       }
-      List {
-        Section(header: Text("Contributors")) {
-          ForEach(coordinator.contributors, id: \.id) { contribution in
-            HStack {
-              WebImageView(url: contribution.avatar_url)
-                .frame(width: 40, height: 40)
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.gray, lineWidth: 2))
-              Text("\(contribution.login)")
-                .font(.headline)
-              Spacer()
-              VStack(alignment: .trailing, spacing: 2) {
-                Text("🔨")
-                Text("\(contribution.contributions)")
-              }
-            }
-          }
-        }
-      }
     }
-    .navigationTitle(repository.name)
-    .task {
-      await coordinator.fetchContributors()
+    .opacity(opacity)
+  }
+
+  var spacing: Double {
+    guard position > 0 else {
+      return 8
+    }
+    return 8 + position * 0.5
+  }
+
+  var opacity: Double {
+    return 1.0 * ((50 + position) / 50)
+  }
+}
+
+struct ContributorView: View {
+  let contribution: Contribution
+  var body: some View {
+    HStack {
+      WebImageView(url: contribution.avatar_url)
+        .frame(width: 40, height: 40)
+        .clipShape(Circle())
+        .overlay(Circle().stroke(Color.gray, lineWidth: 2))
+      Text("\(contribution.login)")
+        .font(.headline)
+      Spacer()
+      VStack(alignment: .trailing, spacing: 2) {
+        Text("🔨")
+        Text("\(contribution.contributions)")
+      }
     }
   }
 }
