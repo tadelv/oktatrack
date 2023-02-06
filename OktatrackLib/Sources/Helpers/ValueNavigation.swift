@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension View {
-  public func navigateIfValue<Value: Equatable, Destination: View>(
+  public func navigateIfEquatableValue<Value: Equatable, Destination: View>(
     _ value: Binding<Value?>,
     destination: @escaping (Value) -> Destination
   ) -> some View {
@@ -29,11 +29,6 @@ struct ValueNavigationDestination<Value: Equatable, Destination: View>: ViewModi
   @Binding var value: Value?
   @ViewBuilder var destination: (Value) -> Destination
   @State var shows: Bool = false
-
-  init(value: Binding<Value?>, destination: @escaping (Value) -> Destination) {
-    self._value = value
-    self.destination = destination
-  }
 
   func body(content: Content) -> some View {
     content

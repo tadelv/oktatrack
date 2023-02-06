@@ -46,7 +46,7 @@ public struct MasterView<Detail: View>: View {
           }
         }
       }
-      .navigateIfValue($selectedRepo) { repo in
+      .navigateIfEquatableValue($selectedRepo) { repo in
         detailLink(repo)
       }
       .navigationTitle("Repositories")
