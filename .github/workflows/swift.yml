@@ -5,9 +5,12 @@ on: [push]
 jobs:
   build:
 
-    runs-on: macOS-latest
+    runs-on: macOS-14
 
     steps:
+    - uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: '15.0-beta'
     - uses: actions/checkout@v1
     - name: Build
       run: xcodebuild build -sdk iphonesimulator -scheme OktaTrack
