@@ -8,13 +8,14 @@
 
 import Foundation
 import Models
+import Observation
 
-@MainActor
-public final class DetailCoordinator: ObservableObject {
+@Observable
+public final class DetailCoordinator {
 
     let repository: Repository
     let fetch: () async throws -> [Contribution]
-    @Published var contributors: [Contribution] = []
+    private(set) var contributors: [Contribution] = []
 
     public init(_ repository: Repository, fetch: @escaping () async throws -> [Contribution]) {
         self.repository = repository

@@ -20,7 +20,7 @@ public struct DetailView: View {
   }
   
   var repository: Repository
-  @ObservedObject private var coordinator: DetailCoordinator
+  private let coordinator: DetailCoordinator
   @State var position: CGPoint = .zero
 
   private let coordinateSpaceName = UUID()
