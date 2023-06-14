@@ -11,7 +11,7 @@ import SwiftUI
 
 public struct MasterView<Detail: View>: View {
 
-  @ObservedObject private var coordinator: MasterCoordinator
+  private let coordinator: MasterCoordinator
   @State private var selectedRepo: Repository?
 
   private let offset: Int = 5
@@ -22,7 +22,7 @@ public struct MasterView<Detail: View>: View {
   public init(fetch: @escaping (UInt, UInt) async throws -> [Repository],
               detail: @escaping (Repository) -> Detail) {
     self.detailLink = detail
-    _coordinator = ObservedObject(wrappedValue: MasterCoordinator(fetch))
+    coordinator = MasterCoordinator(fetch)
   }
 
   public var body: some View {

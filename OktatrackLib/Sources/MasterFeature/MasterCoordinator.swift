@@ -7,13 +7,13 @@
 //
 
 import Foundation
-import Combine
 import Models
+import Observation
 
-@MainActor
+@Observable
 public class MasterCoordinator: ObservableObject {
 
-    @Published var repositories = [Repository]()
+    private(set) var repositories = [Repository]()
     private var page_offset: UInt = 0
     private (set) var page_size: UInt = 25
 
