@@ -117,10 +117,19 @@ struct ContributorView: View {
   let contribution: Contribution
   var body: some View {
     HStack {
-      WebImageView(url: contribution.avatar_url)
-        .frame(width: 40, height: 40)
-        .clipShape(Circle())
-        .overlay(Circle().stroke(Color.gray, lineWidth: 2))
+      AsyncImage(url: contribution.avatar_url) { image in
+        image
+          .resizable()
+          .aspectRatio(contentMode: .fit)
+          .frame(width: 40, height: 40)
+          .clipShape(Circle())
+          .overlay(Circle().stroke(Color.gray, lineWidth: 2))
+      } placeholder: {
+        Circle()
+          .foregroundStyle(.white)
+          .frame(width: 40, height: 40)
+      }
+
       Text("\(contribution.login)")
         .font(.headline)
       Spacer()
@@ -137,7 +146,10 @@ struct DetailView_Previews: PreviewProvider {
   static var previews: some View {
     NavigationStack {
       DetailView(.mock,
-                 DetailCoordinator(.mock, fetch: { Contribution.mock }))
+                 DetailCoordinator(.mock, fetch: {
+        try await Task.sleep(for: .seconds(1))
+        return Contribution.mock
+      }))
     }
   }
 }
