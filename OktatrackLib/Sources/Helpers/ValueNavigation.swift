@@ -8,43 +8,12 @@
 import SwiftUI
 
 extension View {
-  public func navigateIfEquatableValue<Value: Equatable, Destination: View>(
-    _ value: Binding<Value?>,
-    destination: @escaping (Value) -> Destination
-  ) -> some View {
-    self
-      .modifier(ValueNavigationDestination(value: value, destination: destination))
-  }
-
   public func navigateIfValue<Value, Destination: View>(
     _ value: Binding<Value?>,
     destination: @escaping (Value) -> Destination
   ) -> some View {
     self
       .modifier(NonEquatableDestination(value: value, destination: destination))
-  }
-}
-
-struct ValueNavigationDestination<Value: Equatable, Destination: View>: ViewModifier {
-  @Binding var value: Value?
-  @ViewBuilder var destination: (Value) -> Destination
-  @State var shows: Bool = false
-
-  func body(content: Content) -> some View {
-    content
-      .onChange(of: shows, perform: { newValue in
-        if !newValue {
-          value = nil
-        }
-      })
-      .onChange(of: value, perform: { newValue in
-        shows = newValue != nil
-      })
-      .navigationDestination(isPresented: $shows) {
-        if let value {
-          destination(value)
-        }
-      }
   }
 }
 
